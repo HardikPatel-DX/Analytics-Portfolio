@@ -1,160 +1,89 @@
-/* General Styles */
-body {
+/* Reset default styles */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
-header {
-    background-color: #005f99;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: sticky;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+nav {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-header nav ul {
+nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
-    padding: 0;
 }
 
-header nav ul li {
-    display: inline;
+nav ul li {
     margin: 0 15px;
 }
 
-header nav ul li a {
-    color: white;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    padding: 10px;
 }
 
-header nav ul li a:hover {
-    text-decoration: underline;
+nav ul li a:hover {
+    background: #575757;
+    border-radius: 5px;
 }
 
-/* Container */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+section {
+    padding: 60px 20px;
 }
 
-/* About Section */
-#about {
-    padding: 40px 0;
-    background: #e6f0ff;
+#home {
+    background: #f4f4f4;
     text-align: center;
-}
-
-#about h2 {
-    color: #005f99;
-}
-
-#about p {
-    font-size: 1.1rem;
-}
-
-/* Projects Section */
-#projects {
-    padding: 40px 0;
-    background: #ffffff;
-    text-align: center;
-}
-
-#projects h2 {
-    color: #005f99;
 }
 
 .project {
-    background: #f0f8ff;
-    border: 1px solid #d0e1ff;
-    margin: 20px 0;
+    background: #fff;
     padding: 20px;
-    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.project h3 {
-    color: #003366;
-}
-
-.project a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
-/* Contact Section */
-#contact {
-    padding: 40px 0;
-    background: #e6f0ff;
-    text-align: center;
-}
-
-#contact h2 {
-    color: #005f99;
-}
-
-#contact form {
-    max-width: 500px;
-    margin: auto;
-}
-
-#contact label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-#contact input, #contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #d0e1ff;
-    border-radius: 4px;
-}
-
-#contact button {
-    background-color: #005f99;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#contact button:hover {
-    background-color: #004d80;
-}
-
-/* Footer */
 footer {
-    background: #005f99;
-    color: white;
-    padding: 10px 0;
+    background: #333;
+    color: #fff;
     text-align: center;
-}
-
-footer p {
-    margin: 0;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 footer a {
-    color: #66b2ff;
+    color: #fff;
+    margin: 0 10px;
     text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #ff9800;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
