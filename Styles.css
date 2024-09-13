@@ -1,64 +1,160 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     color: #333;
 }
 
+/* Header */
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+    background-color: #005f99;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
     margin: 0;
+    font-size: 2.5rem;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: flex;
 }
 
-nav ul li {
-    margin-left: 1rem;
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #fff;
+header nav ul li a {
+    color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
-section {
-    padding: 2rem 0;
+header nav ul li a:hover {
+    text-decoration: underline;
 }
 
+/* Container */
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* About Section */
+#about {
+    padding: 40px 0;
+    background: #e6f0ff;
+    text-align: center;
+}
+
+#about h2 {
+    color: #005f99;
+}
+
+#about p {
+    font-size: 1.1rem;
+}
+
+/* Projects Section */
+#projects {
+    padding: 40px 0;
+    background: #ffffff;
+    text-align: center;
+}
+
+#projects h2 {
+    color: #005f99;
 }
 
 .project {
-    margin-bottom: 1.5rem;
+    background: #f0f8ff;
+    border: 1px solid #d0e1ff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-footer {
-    background: #333;
-    color: #fff;
+.project h3 {
+    color: #003366;
+}
+
+.project a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px 0;
+    background: #e6f0ff;
     text-align: center;
-    padding: 1rem 0;
+}
+
+#contact h2 {
+    color: #005f99;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: auto;
+}
+
+#contact label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d0e1ff;
+    border-radius: 4px;
+}
+
+#contact button {
+    background-color: #005f99;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#contact button:hover {
+    background-color: #004d80;
+}
+
+/* Footer */
+footer {
+    background: #005f99;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
 }
 
 footer a {
-    color: #fff;
+    color: #66b2ff;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
