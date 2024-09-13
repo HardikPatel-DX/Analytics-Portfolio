@@ -1,4 +1,10 @@
-// scripts.js
-document.addEventListener('DOMContentLoaded', () => {
-    // Add any interactive scripts here
+// Smooth scrolling
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
