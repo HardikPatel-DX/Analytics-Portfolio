@@ -1,72 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hardik Patel Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #6c757d;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #343a40;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hardik Patel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Home Section -->
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I’m Hardik Patel, a Data Analyst with a passion for analytics and visualization.</p>
+    <section id="home" class="bg-gray-100 text-center py-20 animate__animated animate__fadeIn">
+        <h1 class="text-4xl font-bold">Welcome to My Portfolio</h1>
+        <p class="text-lg mt-4">Hi, I’m Hardik Patel, a Data Analyst with a passion for analytics and visualization.</p>
     </section>
 
     <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-<p>A Senior Data Analyst, Data Visualization Specialist, and Pricing Strategy Expert.</p>
-<p>With over 5 years of experience in data analytics and visualization, I specialize in transforming complex data into actionable insights that drive strategic decisions. My expertise includes Power BI, SQL, basic Python, VBA/Macros, Claris FileMaker, and Power Query, enabling me to enhance reporting formats and develop effective pricing strategies.</p>
-<p><strong>Key Strengths:</strong></p>
-<ul>
-  <li><strong>Data Analysis & Visualization:</strong> Leveraging Power BI to create compelling visuals that inform decision-making.</li>
-  <li><strong>Pricing Strategy:</strong> Designing pricing strategies that maximize sales and profitability.</li>
-  <li><strong>Technical Skills:</strong> Proficient in SQL, Power BI, basic Python, VBA/Macros, Claris FileMaker, and Power Query.</li>
-  <li><strong>Collaboration:</strong> Effective communicator across cross-functional teams.</li>
-  <li><strong>Efficiency:</strong> Proven ability to manage multiple projects and deliver results on time.</li>
-</ul>
-<p>I am dedicated to helping organizations succeed through data-driven insights and visualization. In my free time, I enjoy continuous learning, volunteering at local animal shelters, and traveling with my family.</p>
-<p>Let's connect on LinkedIn to explore how I can contribute to your team’s success!</p>
-
+    <section id="about" class="bg-white text-center py-20 animate__animated animate__fadeIn">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="text-lg mb-4">A Senior Data Analyst, Data Visualization Specialist, and Pricing Strategy Expert.</p>
+        <p class="mb-4">With over 5 years of experience in data analytics and visualization, I specialize in transforming complex data into actionable insights that drive strategic decisions. My expertise includes Power BI, SQL, basic Python, VBA/Macros, Claris FileMaker, and Power Query, enabling me to enhance reporting formats and develop effective pricing strategies.</p>
+        <p><strong>Key Strengths:</strong></p>
+        <ul class="list-disc list-inside text-left mx-auto max-w-md">
+            <li><strong>Data Analysis & Visualization:</strong> Leveraging Power BI to create compelling visuals that inform decision-making.</li>
+            <li><strong>Pricing Strategy:</strong> Designing pricing strategies that maximize sales and profitability.</li>
+            <li><strong>Technical Skills:</strong> Proficient in SQL, Power BI, basic Python, VBA/Macros, Claris FileMaker, and Power Query.</li>
+            <li><strong>Collaboration:</strong> Effective communicator across cross-functional teams.</li>
+            <li><strong>Efficiency:</strong> Proven ability to manage multiple projects and deliver results on time.</li>
+        </ul>
+        <p class="mt-4">I am dedicated to helping organizations succeed through data-driven insights and visualization. In my free time, I enjoy continuous learning, volunteering at local animal shelters, and traveling with my family.</p>
+        <p class="mt-4">Let's connect on LinkedIn to explore how I can contribute to your team’s success!</p>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
+    <section id="projects" class="bg-gray-100 text-center py-20 animate__animated animate__fadeIn">
+        <h2 class="text-3xl font-bold mb-4">Projects</h2>
+        <div class="container mx-auto">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="bg-white p-4 shadow-lg rounded-lg">
+                        <h3 class="text-xl font-bold">Project 1</h3>
+                        <p>Description of Project 1.</p>
+                    </div>
+                </div>
+                <!-- Add more projects here -->
+            </div>
         </div>
-        <!-- Add more projects as needed -->
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
+    <section id="contact" class="bg-white text-center py-20 animate__animated animate__fadeIn">
+        <h2 class="text-3xl font-bold mb-4">Contact</h2>
         <p>Contact details or form.</p>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="bg-light text-center py-4">
         <p>&copy; 2024 Hardik Patel</p>
         <div>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github fa-2x"></i></a>
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // GSAP Animation
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.from("#home", { opacity: 0, y: 50, duration: 2 });
+            gsap.from("#about", { opacity: 0, y: 50, duration: 2, delay: 0.5 });
+            gsap.from("#projects", { opacity: 0, y: 50, duration: 2, delay: 1 });
+            gsap.from("#contact", { opacity: 0, y: 50, duration: 2, delay: 1.5 });
+        });
+    </script>
 </body>
+
 </html>
