@@ -9,26 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.from("#contact h2", { opacity: 0, y: -50, duration: 1, delay: 3 });
     gsap.from("#contact p", { opacity: 0, y: 20, duration: 1, delay: 3.5 });
 
-    // Strength hover effect for tooltip
+    // Strength hover effect and heatbar positioning
     const strengths = document.querySelectorAll('.strength');
     
     strengths.forEach(strength => {
-        strength.addEventListener('mouseenter', function () {
-            const skillName = this.getAttribute('data-skill');
-            const skillLevel = this.getAttribute('data-level');
-            this.setAttribute('title', `${skillName} (Level: ${skillLevel})`);
-        });
-        
-        strength.addEventListener('mouseleave', function () {
-            this.removeAttribute('title');
-        });
-    });
-    
-    // Heatbar and marker positioning based on skill level
-    strengths.forEach(strength => {
         const level = strength.getAttribute('data-level');
         const heatbar = strength.querySelector('.heatbar-container');
-        const marker = heatbar.querySelector('.level-marker');
+        const marker = strength.querySelector('.level-marker');
         
         // Set the marker position based on level (1 to 10)
         const levelPercent = level * 10; // 10% per level
@@ -36,6 +23,21 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Set the marker text
         marker.innerText = level;
+
+        // Tooltip and hover effect
+        strength.addEventListener('mouseenter', function () {
+            const skillName = this.getAttribute('data-skill');
+            const skillLevel = this.getAttribute('data-level');
+            this.setAttribute('title', `${skillName} (Level: ${skillLevel})`);
+            heatbar.style.display = 'block';
+            marker.style.display = 'block';
+        });
+        
+        strength.addEventListener('mouseleave', function () {
+            this.removeAttribute('title');
+            heatbar.style.display = 'none';
+            marker.style.display = 'none';
+        });
     });
 });
 
