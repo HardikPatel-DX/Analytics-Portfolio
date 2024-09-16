@@ -44,6 +44,29 @@
         <p class="animate__animated animate__fadeIn">Let's connect on LinkedIn to explore how I can contribute to your team’s success!</p>
     </section>
 
+    <!-- Merged Key Strengths Section -->
+    <section id="key-strengths">
+        <h2 class="animate__animated animate__fadeIn">Key Strengths</h2>
+        <div class="tree-map-container">
+            <div class="strength" style="flex-grow: 8;" data-skill="Data Analysis & Visualization (8)">
+                <span>Data Analysis & Visualization</span>
+            </div>
+            <div class="strength" style="flex-grow: 9;" data-skill="Pricing Strategy (9)">
+                <span>Pricing Strategy</span>
+            </div>
+            <div class="strength" style="flex-grow: 7;" data-skill="Technical Skills (7)">
+                <span>Technical Skills</span>
+            </div>
+            <div class="strength" style="flex-grow: 7;" data-skill="Collaboration (7)">
+                <span>Collaboration</span>
+            </div>
+            <div class="strength" style="flex-grow: 6;" data-skill="Efficiency (6)">
+                <span>Efficiency</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
     <section id="projects">
         <h2 class="animate__animated animate__fadeIn">Projects</h2>
         <div class="project animate__animated animate__fadeIn">
@@ -53,11 +76,13 @@
         <!-- Add more projects as needed -->
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2 class="animate__animated animate__fadeIn">Contact</h2>
         <p class="animate__animated animate__fadeIn">Contact details or form.</p>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Hardik Patel</p>
         <div>
@@ -66,9 +91,56 @@
         </div>
     </footer>
 
+    <!-- External JS and Libraries -->
     <script src="scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS for Key Strengths -->
+    <style>
+        .tree-map-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .strength {
+            position: relative;
+            background-color: #014f86;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .strength span {
+            font-size: 1.1rem;
+            z-index: 1;
+        }
+        .strength:hover {
+            background-color: #61a5c2;
+            transform: scale(1.05);
+        }
+        .strength:hover::before {
+            content: attr(data-skill);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2rem;
+            color: #89c2d9;
+        }
+        /* Color Palette */
+        .strength:nth-child(1) { background-color: #013a63; }
+        .strength:nth-child(2) { background-color: #01497c; }
+        .strength:nth-child(3) { background-color: #2a6f97; }
+        .strength:nth-child(4) { background-color: #2c7da0; }
+        .strength:nth-child(5) { background-color: #468faf; }
+    </style>
 </body>
 </html>
