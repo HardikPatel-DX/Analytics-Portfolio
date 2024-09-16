@@ -93,6 +93,7 @@ footer a:hover {
     text-align: center;
     min-width: 120px;
     height: 120px;
+    overflow: hidden;
 }
 
 .strength span {
@@ -112,16 +113,6 @@ footer a:hover {
     display: none; /* Hide the original name on hover */
 }
 
-.strength:hover::after {
-    content: attr(data-level);
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2rem;
-    color: #89c2d9;
-    z-index: 2;
-}
-
 /* Heatbar Styles */
 .heatbar-container {
     display: none;
@@ -130,23 +121,30 @@ footer a:hover {
     background: linear-gradient(to right, #ff6666, #ffcc66, #66ff66); /* Light red to green */
     position: absolute;
     bottom: 10px;
+    left: 10%;
     border-radius: 5px;
-}
-
-.strength:hover .heatbar-container {
-    display: block;
 }
 
 .level-marker {
     position: absolute;
-    display: none;
     top: -25px;
-    font-size: 1.5rem;
+    font-size: 14px;
     color: black;
+}
+
+/* Show Heatbar and Marker on Hover */
+.strength:hover .heatbar-container {
+    display: block;
 }
 
 .strength:hover .level-marker {
     display: block;
+}
+
+/* Heatbar marker styles */
+.heatbar-container .level-marker {
+    left: calc(10% * var(--level)); /* Adjust based on skill level */
+    transform: translateX(-50%); /* Center the marker */
 }
 
 /* Color Palette */
@@ -155,11 +153,3 @@ footer a:hover {
 .strength:nth-child(3) { background-color: #2a6f97; }
 .strength:nth-child(4) { background-color: #2c7da0; }
 .strength:nth-child(5) { background-color: #468faf; }
-
-/* Heatbar marker styles */
-.heatbar-container .level-marker {
-    position: absolute;
-    left: calc(10% * attr(data-level)); /* Adjust based on skill level */
-    font-size: 14px;
-    color: black;
-}
