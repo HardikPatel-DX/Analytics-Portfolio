@@ -75,6 +75,7 @@ footer a:hover {
     flex-wrap: wrap;
     gap: 10px;
     margin: 20px 0;
+    width: 25%; /* Quarter of the page width */
 }
 
 .strength {
@@ -83,7 +84,7 @@ footer a:hover {
     color: white;
     padding: 20px;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, width 0.3s;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -91,6 +92,7 @@ footer a:hover {
     flex-grow: 1;
     text-align: center;
     min-width: 120px;
+    height: 120px;
 }
 
 .strength span {
@@ -98,9 +100,16 @@ footer a:hover {
     z-index: 1;
 }
 
+/* Hover Effects */
 .strength:hover {
     background-color: #61a5c2;
-    transform: scale(1.05);
+    transform: scale(1.5); /* Enlarges box by 1.5 */
+    width: 100%;
+    height: 180px;
+}
+
+.strength:hover span {
+    display: none; /* Hide the original name on hover */
 }
 
 .strength:hover::after {
@@ -113,9 +122,44 @@ footer a:hover {
     z-index: 2;
 }
 
+/* Heatbar Styles */
+.heatbar-container {
+    display: none;
+    width: 80%;
+    height: 15px;
+    background: linear-gradient(to right, #ff6666, #ffcc66, #66ff66); /* Light red to green */
+    position: absolute;
+    bottom: 10px;
+    border-radius: 5px;
+}
+
+.strength:hover .heatbar-container {
+    display: block;
+}
+
+.level-marker {
+    position: absolute;
+    display: none;
+    top: -25px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.strength:hover .level-marker {
+    display: block;
+}
+
 /* Color Palette */
 .strength:nth-child(1) { background-color: #013a63; }
 .strength:nth-child(2) { background-color: #01497c; }
 .strength:nth-child(3) { background-color: #2a6f97; }
 .strength:nth-child(4) { background-color: #2c7da0; }
 .strength:nth-child(5) { background-color: #468faf; }
+
+/* Heatbar marker styles */
+.heatbar-container .level-marker {
+    position: absolute;
+    left: calc(10% * attr(data-level)); /* Adjust based on skill level */
+    font-size: 14px;
+    color: black;
+}
