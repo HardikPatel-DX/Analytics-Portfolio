@@ -40,6 +40,19 @@
     gtag('js', new Date());
 
     gtag('config', '');
+        // Store the original page title
+        const originalTitle = document.title;
+
+        // Listen for visibility changes (tab switching)
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                // When the user switches to another tab
+                document.title = "Come back! There's more to see 😊";
+            } else {
+                // When the user returns to the tab
+                document.title = originalTitle;
+            }
+        });
   </script>
 
 
