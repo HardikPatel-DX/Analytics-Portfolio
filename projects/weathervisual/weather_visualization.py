@@ -72,12 +72,17 @@ def plot_weather_data(dates, temperatures, city):
     plt.show()
 
 def show_error_gif():
+    # Path to the sad face GIF in your repository
+    sad_face_path = 'https://github.com/HardikPatel-DX/Analytics-Portfolio/edit/main/projects/weathervisual/giphy.gif'  # Update with your actual path
+
+    img = plt.imread(sad_face_path)
+
     plt.figure(figsize=(5, 5))
-    img = plt.imread('sad_face.gif')  # Load your GIF
     plt.imshow(img)
     plt.axis('off')  # Hide axes
     plt.title('Bad Request!', fontsize=14, color='red')
     plt.show()
+
 
 def main():
     city = input("Enter the city name: ")
