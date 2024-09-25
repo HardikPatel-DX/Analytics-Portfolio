@@ -65,7 +65,7 @@ def plot_weather_data(dates, temperatures, city):
 
 def main():
     city = 'Edmonton'  # Change city as needed
-    api_key = 'your_api_key_here'  # Replace with your OpenWeatherMap API key
+    api_key = 'dbedd922e0ab39f9e9d6dbd8251e9f18'  # Replace with your OpenWeatherMap API key
     data = fetch_weather_data(city, api_key)
     dates, temperatures = parse_weather_data(data)
     plot_weather_data(dates, temperatures, city)
