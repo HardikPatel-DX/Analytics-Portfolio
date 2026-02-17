@@ -1131,7 +1131,8 @@ section .container {
   margin: 0 0 16px 0;
   opacity: 0.28;
   transform: translateY(10px);
-  transition: opacity 220ms ease, transform 220ms ease, filter 220ms ease;
+  transition: opacity 220ms ease, transform 220ms ease, filter 220ms ease, background 220ms ease, border-color 220ms ease;
+  cursor: pointer; /* clickable */
 }
 
 .xp-item.is-visible{
@@ -1159,6 +1160,13 @@ section .container {
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 12px;
   padding: 14px 14px;
+  transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+
+.xp-item:hover .xp-card{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(18,214,64,0.30);
+  transform: translateY(-1px);
 }
 
 .xp-dot{
@@ -1196,11 +1204,28 @@ section .container {
   top: 100px;
 }
 
+/* Popup panel: DARK + 1px multi-color gradient border */
 .xp-detail-inner{
-  background: #fff;
+  border: 1px solid transparent;
   border-radius: 14px;
   padding: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+
+  background:
+    /* inner panel background */
+    linear-gradient(rgba(9,32,58,0.92), rgba(9,32,58,0.92)) padding-box,
+    /* gradient border using Interests icon colors */
+    linear-gradient(90deg,
+      #FFADAD,
+      #FFD6A5,
+      #FDFFB6,
+      #CAFFBF,
+      #9BF6FF,
+      #A0C4FF,
+      #BDB2FF,
+      #FFC6FF
+    ) border-box;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
 }
 
 .xp-detail-top{
@@ -1212,19 +1237,19 @@ section .container {
 
 .xp-detail-inner h3{
   margin: 0 0 6px 0;
-  color:#09203a;
+  color: #fff;
   font-weight: 900;
 }
 
 .xp-detail-company{
   margin: 0;
-  color:#24435a;
+  color: rgba(255,255,255,0.86);
   font-weight: 700;
 }
 
 .xp-detail-dates{
   margin: 6px 0 10px 0;
-  color:#4b6475;
+  color: rgba(255,255,255,0.62);
   font-weight: 600;
 }
 
@@ -1239,8 +1264,9 @@ section .container {
   display:inline-block;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(9,32,58,0.08);
-  color:#09203a;
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.10);
   font-size: 12px;
   font-weight: 700;
 }
@@ -1248,18 +1274,19 @@ section .container {
 .xp-detail-bullets{
   margin: 0;
   padding-left: 18px;
-  color:#09203a;
+  color: rgba(255,255,255,0.90);
 }
 
 .xp-detail-bullets li{
   margin-bottom: 8px;
+  color: rgba(255,255,255,0.88);
 }
 
 .xp-note{
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid rgba(9,32,58,0.12);
-  color: #4b6475;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.62);
   font-size: 13px;
   font-weight: 600;
 }
