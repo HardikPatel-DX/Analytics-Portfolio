@@ -482,65 +482,34 @@
   </section>
   <!-- End Skills Section -->
 
-  <!-- Start Resume Section (Embedded + Versioning + Download) -->
-  <section id="resume" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Resume</h2>
-      </div>
-
-      <div class="d-flex flex-wrap align-items-center mb-3" style="gap:10px;">
-        <button type="button" class="btn btn-success btn-sm" id="btnPricing">Pricing Version</button>
-        <button type="button" class="btn btn-outline-success btn-sm" id="btnData">Data Version</button>
-
-        <a class="btn btn-light btn-sm" id="btnDownload" href="img/Hardik_Patel_Resume_Pricing.pdf" download>
-          Download PDF
-        </a>
-      </div>
-
-      <div style="background:#fff; border-radius:10px; overflow:hidden;">
-        <iframe
-          id="resumeFrame"
-          src="img/Hardik_Patel_Resume_Pricing.pdf"
-          width="100%"
-          height="900px"
-          style="border:none;">
-        </iframe>
-      </div>
+ <!-- Start Resume Section (Single Resume) -->
+<section id="resume" class="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Resume</h2>
     </div>
-  </section>
 
-  <script>
-    (function () {
-      const pricingPdf = "img/Hardik_Patel_Resume_Pricing.pdf";
-      const dataPdf = "img/Hardik_Patel_Resume_Data.pdf";
+    <div class="d-flex flex-wrap align-items-center mb-3" style="gap:10px;">
+      <a class="btn btn-success btn-sm" href="img/Hardik_Patel_Resume.pdf" target="_blank">
+        Open PDF
+      </a>
 
-      const frame = document.getElementById("resumeFrame");
-      const btnPricing = document.getElementById("btnPricing");
-      const btnData = document.getElementById("btnData");
-      const btnDownload = document.getElementById("btnDownload");
+      <a class="btn btn-light btn-sm" href="img/Hardik_Patel_Resume.pdf" download>
+        Download PDF
+      </a>
+    </div>
 
-      function setActive(which) {
-        const isPricing = which === "pricing";
-        const pdf = isPricing ? pricingPdf : dataPdf;
-
-        frame.src = pdf;
-        btnDownload.href = pdf;
-
-        if (isPricing) {
-          btnPricing.className = "btn btn-success btn-sm";
-          btnData.className = "btn btn-outline-success btn-sm";
-        } else {
-          btnPricing.className = "btn btn-outline-success btn-sm";
-          btnData.className = "btn btn-success btn-sm";
-        }
-      }
-
-      btnPricing.addEventListener("click", function () { setActive("pricing"); });
-      btnData.addEventListener("click", function () { setActive("data"); });
-    })();
-  </script>
-  <!-- End Resume Section -->
+    <div style="background:#fff; border-radius:10px; overflow:hidden;">
+      <iframe
+        src="img/Hardik_Patel_Resume.pdf"
+        width="100%"
+        height="900px"
+        style="border:none;">
+      </iframe>
+    </div>
+  </div>
+</section>
+<!-- End Resume Section -->
 
   <!-- Start Links section -->
   <section id="links" class="services">
@@ -636,3 +605,4 @@
 
 </body>
 </html>
+
