@@ -148,4 +148,72 @@
     $('.venobox').venobox();
   });
 
+  // Experience timeline (custom)
+  (function () {
+    var $items = $('.xp-item');
+    if (!$items.length) return;
+
+    var $title = $('#xpTitle');
+    var $company = $('#xpCompany');
+    var $dates = $('#xpDates');
+    var $bullets = $('#xpBullets');
+    var $tags = $('#xpTags');
+
+    function setDetail($el) {
+      var title = $el.data('title') || '';
+      var company = $el.data('company') || '';
+      var dates = $el.data('dates') || '';
+      var bullets = ($el.data('bullets') || '').toString().split('|').filter(Boolean);
+      var tags = ($el.data('tags') || '').toString().split('|').filter(Boolean);
+
+      $title.text(title);
+      $company.text(company);
+      $dates.text(dates);
+
+      $bullets.html(bullets.map(function (b) { return '<li>' + b + '</li>'; }).join(''));
+      $tags.html(tags.map(function (t) { return '<span class="xp-tag">' + t + '</span>'; }).join(''));
+    }
+
+    function updateActive() {
+      var bestEl = null;
+      var bestDist = Infinity;
+
+      $items.each(function () {
+        var rect = this.getBoundingClientRect();
+        var dist = Math.abs(rect.top - 140);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestEl = this;
+        }
+      });
+
+      if (!bestEl) return;
+
+      $items.removeClass('is-active');
+      $(bestEl).addClass('is-active');
+      setDetail($(bestEl));
+    }
+
+    // reveal animation (IntersectionObserver)
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) e.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.15 });
+
+      $items.each(function () { io.observe(this); });
+    } else {
+      $items.addClass('is-visible');
+    }
+
+    // init
+    setDetail($('.xp-item.is-active').first());
+    updateActive();
+
+    // scroll handling
+    window.addEventListener('scroll', function () {
+      window.requestAnimationFrame(updateActive);
+    }, { passive: true });
+  })();
 })(jQuery);
