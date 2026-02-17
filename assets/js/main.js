@@ -209,6 +209,12 @@
 
     // init
     setDetail($('.xp-item.is-active').first());
+        // CLICK to activate (important when section does not scroll)
+    $items.on('click', function () {
+      $items.removeClass('is-active');
+      $(this).addClass('is-active is-visible');
+      setDetail($(this));
+    });
     updateActive();
 
     // scroll handling
