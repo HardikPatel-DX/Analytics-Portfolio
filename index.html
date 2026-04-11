@@ -317,6 +317,54 @@
     .method-insight { background: rgba(20,157,221,0.06); border: 1px solid rgba(20,157,221,0.18); border-radius: 8px; padding: 9px 13px; font-size: 0.77rem; color: #999; display: flex; align-items: flex-start; gap: 7px; }
     .method-insight i { color: #149ddd; font-size: 0.95rem; margin-top: 1px; flex-shrink: 0; }
     @media (max-width: 767px) { .cs-row { grid-template-columns: repeat(2,1fr); } .calc-top-bar { flex-direction: column; } }
+
+    /* ---- Calculator Footer / Quote Print ---- */
+    .calc-footer {
+      padding: 14px 22px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .calc-brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .calc-brand-name {
+      font-size: 0.82rem; font-weight: 700; color: #fff; line-height: 1.2;
+    }
+    .calc-brand-title {
+      font-size: 0.7rem; color: #149ddd; font-weight: 500;
+    }
+    .calc-social { display: flex; gap: 8px; align-items: center; }
+    .calc-social a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 6px;
+      font-size: 1rem; text-decoration: none !important; transition: all 0.2s;
+      border: 1px solid rgba(255,255,255,0.12); color: #aaa;
+      background: rgba(255,255,255,0.05);
+    }
+    .calc-social a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .calc-social a.li:hover { background: #0077b5; border-color: #0077b5; color: #fff; }
+    .calc-social a.gh:hover { background: #333; border-color: #555; color: #fff; }
+    .calc-social a.em:hover { background: #6001d2; border-color: #6001d2; color: #fff; }
+    .print-quote-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 18px; border-radius: 8px; font-size: 0.8rem; font-weight: 700;
+      background: rgba(20,157,221,0.15); color: #149ddd;
+      border: 1px solid rgba(20,157,221,0.38); cursor: pointer;
+      transition: all 0.2s; text-decoration: none !important;
+    }
+    .print-quote-btn:hover { background: #149ddd; color: #fff; }
+
+    /* ---- Print Styles ---- */
+    @media print {
+      body * { visibility: hidden !important; }
+      #quote-print-area, #quote-print-area * { visibility: visible !important; }
+      #quote-print-area { position: fixed; top: 0; left: 0; width: 100%; padding: 40px; background: #fff; color: #000; }
+      .no-print { display: none !important; }
+    }
+    #quote-print-area {
+      display: none;
+      font-family: 'Open Sans', sans-serif;
+    }
   </style>
 </head>
 
@@ -519,9 +567,8 @@
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="cert-card w-100">
               <div class="cert-badge-area">
-                <img src="https://images.credly.com/size/340x340/images/4e3d6f9f-55d7-4ea7-b0b7-19ccdc17e5e7/blob" alt="PMI Generative AI Badge"
-                  style="max-width:110px;max-height:110px;object-fit:contain;"
-                  onerror="this.outerHTML='<div class=\'cert-icon-badge\' style=\'background:linear-gradient(135deg,#6e3fff,#a855f7)\'><i class=\'bx bx-brain\'></i></div>'">
+                <img src="img/certification/gen-ai-pmi.png" alt="PMI Generative AI Badge"
+                  style="max-width:120px;max-height:120px;object-fit:contain;">
               </div>
               <div class="cert-body">
                 <span class="cert-issuer">Project Management Institute (PMI)</span>
@@ -1184,6 +1231,26 @@
 
           </div>
         </div>
+
+        <!-- Calculator Footer: branding + social + print -->
+        <div class="calc-footer">
+          <div class="calc-brand">
+            <div>
+              <div class="calc-brand-name">Hardik Patel</div>
+              <div class="calc-brand-title">Pricing Manager &amp; Data Analyst</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+            <div class="calc-social">
+              <a href="https://www.linkedin.com/in/hardikpatelbianalyst" target="_blank" class="li" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://github.com/HardikPatel-DX" target="_blank" class="gh" title="GitHub"><i class="bx bxl-github"></i></a>
+              <a href="#" id="calc-email-link" class="em" title="Email"><i class="bx bx-envelope"></i></a>
+            </div>
+            <button class="print-quote-btn no-print" onclick="printQuote()">
+              <i class="bx bx-printer"></i> Print Quote
+            </button>
+          </div>
+        </div>
       </div>
       <!-- ===== End Pricing Calculator ===== -->
 
@@ -1535,6 +1602,63 @@
   })();
   </script>
 
+  <!-- Hidden print quote area -->
+  <div id="quote-print-area"></div>
+
+  <!-- Print Quote Function -->
+  <script>
+  function printQuote() {
+    var eu = atob('aGFyZGlrcGF0ZWw4OTI1') + '\u0040' + atob('eWFob28uY29t');
+    var fields = [
+      ['Base Cost',          document.getElementById('out-base-cost')   ? document.getElementById('out-base-cost').textContent   : '—'],
+      ['Overhead',           document.getElementById('pc-overhead')      ? document.getElementById('pc-overhead').value + '%'     : '—'],
+      ['Platform Fees',      document.getElementById('pc-platform')      ? document.getElementById('pc-platform').value + '%'     : '—'],
+      ['Total Cost / Unit',  document.getElementById('out-total-cost')   ? document.getElementById('out-total-cost').textContent  : '—'],
+      ['Selling Price / Unit',document.getElementById('out-price')       ? document.getElementById('out-price').textContent       : '—'],
+      ['Gross Profit / Unit',document.getElementById('out-profit')       ? document.getElementById('out-profit').textContent      : '—'],
+      ['Gross Margin',       document.getElementById('out-margin')       ? document.getElementById('out-margin').textContent      : '—'],
+      ['Quantity',           document.getElementById('out-qty-label')    ? document.getElementById('out-qty-label').textContent   : '—'],
+      ['Duration',           document.getElementById('out-duration-label')? document.getElementById('out-duration-label').textContent : '—'],
+      ['Contract Value',     document.getElementById('out-contract-val') ? document.getElementById('out-contract-val').textContent: '—'],
+      ['Break-even',         document.getElementById('out-breakeven')    ? document.getElementById('out-breakeven').textContent   : '—']
+    ];
+    var methodEl = document.querySelector('.method-tab.active');
+    var method = methodEl ? methodEl.textContent.trim() : '—';
+    var now = new Date().toLocaleDateString('en-CA', { year:'numeric', month:'long', day:'numeric' });
+
+    var rows = fields.map(function(f) {
+      return '<tr><td style="padding:7px 14px;color:#555;border-bottom:1px solid #eee;width:55%">' + f[0] + '</td>' +
+             '<td style="padding:7px 14px;font-weight:700;border-bottom:1px solid #eee;text-align:right">' + f[1] + '</td></tr>';
+    }).join('');
+
+    var html = '<div style="max-width:640px;margin:0 auto;font-family:Arial,sans-serif;color:#111;">' +
+      '<div style="background:#0d1b2a;color:#fff;padding:22px 28px;border-radius:10px 10px 0 0;display:flex;justify-content:space-between;align-items:flex-start;">' +
+        '<div>' +
+          '<div style="font-size:1.15rem;font-weight:700;letter-spacing:0.3px;">Pricing Quote</div>' +
+          '<div style="font-size:0.8rem;color:#149ddd;margin-top:3px;">Method: ' + method + '</div>' +
+        '</div>' +
+        '<div style="text-align:right;">' +
+          '<div style="font-weight:700;font-size:1rem;">Hardik Patel</div>' +
+          '<div style="font-size:0.78rem;color:#aaa;">Pricing Manager &amp; Data Analyst</div>' +
+          '<div style="font-size:0.72rem;color:#777;margin-top:3px;">' + eu + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #e0e0e0;border-top:none;">' + rows + '</table>' +
+      '<div style="background:#f7f9fb;padding:14px 28px;border:1px solid #e0e0e0;border-top:none;border-radius:0 0 10px 10px;display:flex;justify-content:space-between;align-items:center;">' +
+        '<div style="font-size:0.72rem;color:#999;">Generated ' + now + ' · linkedin.com/in/hardikpatelbianalyst · github.com/HardikPatel-DX</div>' +
+        '<div style="font-size:0.72rem;color:#bbb;">Pricing Intelligence Calculator</div>' +
+      '</div>' +
+    '</div>';
+
+    var area = document.getElementById('quote-print-area');
+    if (area) { area.innerHTML = html; area.style.display = 'block'; }
+    setTimeout(function () { window.print(); }, 100);
+    window.addEventListener('afterprint', function () {
+      if (area) area.style.display = 'none';
+    }, { once: true });
+  }
+  </script>
+
   <!-- Contact info: assembled at runtime to prevent scraping -->
   <script>
     (function () {
@@ -1560,7 +1684,7 @@
       if (contactPhoneText) contactPhoneText.textContent = ph;
 
       // Set mailto href on email icon links
-      ['header-email-link', 'contact-email-link'].forEach(function (id) {
+      ['header-email-link', 'contact-email-link', 'calc-email-link'].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) {
           el.href = 'mailto:' + email;
