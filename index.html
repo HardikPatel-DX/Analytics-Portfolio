@@ -183,6 +183,140 @@
       color: #fff;
     }
     .cert-row-gap { row-gap: 24px !important; }
+
+    /* ---- Skills Dark Theme ---- */
+    .skills-box {
+      background: rgba(255,255,255,0.04) !important;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.07) !important;
+    }
+    .skills-box h4 { color: #fff !important; }
+    .skill-logo-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.92);
+      border-radius: 8px;
+      padding: 6px 12px;
+      margin: 5px;
+      vertical-align: middle;
+    }
+
+    /* ---- Project Cards ---- */
+    .proj-grid { row-gap: 28px; }
+    .proj-card {
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #111c28;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .proj-card:hover { transform: translateY(-5px); box-shadow: 0 14px 35px rgba(0,0,0,0.45); }
+    .proj-img { width: 100%; height: 185px; object-fit: cover; display: block; }
+    .proj-header { padding: 18px 20px 12px; }
+    .proj-category {
+      display: inline-block;
+      font-size: 0.67rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      padding: 2px 10px; border-radius: 20px; margin-bottom: 9px;
+    }
+    .proj-title { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 7px; line-height: 1.3; }
+    .proj-desc { font-size: 0.8rem; color: #aaa; line-height: 1.55; margin: 0; }
+    .proj-footer {
+      padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      border-top: 1px solid rgba(255,255,255,0.07); margin-top: auto;
+    }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .proj-tag {
+      font-size: 0.68rem; font-weight: 500; padding: 2px 8px; border-radius: 20px;
+      background: rgba(255,255,255,0.06); color: #bbb; border: 1px solid rgba(255,255,255,0.11);
+    }
+    .proj-links { display: flex; gap: 7px; flex-shrink: 0; }
+    .proj-link-btn {
+      font-size: 0.74rem; font-weight: 600; padding: 5px 12px;
+      border-radius: 6px; text-decoration: none !important; transition: all 0.2s;
+    }
+    .proj-link-btn.primary { background: rgba(20,157,221,0.14); color: #149ddd; border: 1px solid rgba(20,157,221,0.35); }
+    .proj-link-btn.primary:hover { background: #149ddd; color: #fff; }
+    .proj-link-btn.secondary { background: rgba(255,255,255,0.05); color: #aaa; border: 1px solid rgba(255,255,255,0.12); }
+    .proj-link-btn.secondary:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+    /* ---- Pricing Calculator ---- */
+    .calc-wrapper {
+      background: linear-gradient(135deg,#0d1b2a 0%,#1a2a3a 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(20,157,221,0.28);
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .calc-top-bar {
+      background: linear-gradient(90deg,rgba(20,157,221,0.18),rgba(106,63,255,0.12));
+      padding: 16px 24px;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .calc-top-bar h3 { margin: 0; font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .calc-top-bar p { margin: 3px 0 0; font-size: 0.78rem; color: #aaa; }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+      background: rgba(102,187,106,0.14); color: #66bb6a;
+      border: 1px solid rgba(102,187,106,0.3);
+      padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;
+    }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #66bb6a; animation: pcpulse 1.5s infinite; }
+    @keyframes pcpulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+    .calc-body { padding: 20px 22px 22px; }
+    .calc-panel {
+      background: rgba(255,255,255,0.03); border-radius: 12px;
+      padding: 16px 18px; border: 1px solid rgba(255,255,255,0.07); height: 100%;
+    }
+    .calc-panel h5 { color: #149ddd; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 13px; }
+    .calc-panel h5.mt { margin-top: 18px; }
+    .calc-field { margin-bottom: 13px; }
+    .calc-field label { display: flex; align-items: center; justify-content: space-between; font-size: 0.79rem; color: #bbb; margin-bottom: 6px; font-weight: 500; }
+    .val-badge { background: rgba(20,157,221,0.14); color: #149ddd; border: 1px solid rgba(20,157,221,0.3); padding: 1px 8px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; min-width: 40px; text-align: center; }
+    .input-prefix { display: flex; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; overflow: hidden; }
+    .input-prefix span { padding: 8px 10px; color: #149ddd; font-weight: 700; font-size: 0.88rem; background: rgba(20,157,221,0.1); border-right: 1px solid rgba(255,255,255,0.09); }
+    .input-prefix input { background: transparent; border: none; color: #fff; padding: 8px 11px; font-size: 0.88rem; width: 100%; outline: none; }
+    .input-prefix input::placeholder { color: #555; }
+    .calc-range { width: 100%; -webkit-appearance: none; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.12); outline: none; cursor: pointer; }
+    .calc-range::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #149ddd; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 6px rgba(20,157,221,0.5); }
+    .calc-input-full { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; color: #fff; padding: 8px 11px; font-size: 0.84rem; outline: none; }
+    .calc-input-full:focus { border-color: rgba(20,157,221,0.5); }
+    .calc-input-full option { background: #1a2a3a; }
+    .method-tabs { display: flex; gap: 5px; flex-wrap: wrap; }
+    .method-tab { padding: 5px 12px; border-radius: 7px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: #aaa; cursor: pointer; transition: all 0.2s; }
+    .method-tab:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .method-tab.active { background: rgba(20,157,221,0.2); color: #149ddd; border-color: rgba(20,157,221,0.45); }
+    .method-input.hidden { display: none; }
+    .results-panel { background: rgba(0,0,0,0.18); }
+    .calc-waterfall { margin-bottom: 14px; }
+    .wf-row { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.81rem; }
+    .wf-row span:first-child { color: #999; }
+    .wf-row span:last-child { color: #fff; font-weight: 600; font-family: monospace; font-size: 0.85rem; }
+    .wf-row.sub span:first-child { color: #666; padding-left: 10px; font-size: 0.76rem; }
+    .wf-row.total { border-top: 1px solid rgba(255,255,255,0.15); margin-top: 3px; padding-top: 8px; }
+    .wf-row.total span { color: #ddd !important; font-weight: 700; font-size: 0.88rem; }
+    .wf-row.price span { font-size: 1rem !important; font-weight: 800 !important; }
+    .wf-row.price span:first-child { color: #aaa !important; }
+    .wf-row.price span:last-child { color: #42a5f5 !important; }
+    .wf-row.profit span:last-child { color: #66bb6a !important; }
+    .margin-gauge { background: rgba(0,0,0,0.18); border-radius: 10px; padding: 11px 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+    .margin-label { font-size: 0.71rem; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+    .margin-bar-wrap { flex: 1; background: rgba(255,255,255,0.07); border-radius: 6px; height: 8px; overflow: hidden; }
+    .margin-bar { height: 100%; border-radius: 6px; background: #149ddd; width: 0%; transition: width 0.4s ease, background 0.3s; }
+    .margin-pct { font-size: 1.05rem; font-weight: 800; color: #149ddd; min-width: 52px; text-align: right; font-family: monospace; transition: color 0.3s; }
+    .cs-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; margin-bottom: 12px; }
+    .cs-stat { background: rgba(255,255,255,0.04); border-radius: 9px; padding: 9px 6px; text-align: center; border: 1px solid rgba(255,255,255,0.07); }
+    .cs-val { font-size: 0.92rem; font-weight: 800; color: #fff; font-family: monospace; line-height: 1.1; }
+    .cs-key { font-size: 0.63rem; color: #777; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .method-insight { background: rgba(20,157,221,0.06); border: 1px solid rgba(20,157,221,0.18); border-radius: 8px; padding: 9px 13px; font-size: 0.77rem; color: #999; display: flex; align-items: flex-start; gap: 7px; }
+    .method-insight i { color: #149ddd; font-size: 0.95rem; margin-top: 1px; flex-shrink: 0; }
+    @media (max-width: 767px) { .cs-row { grid-template-columns: repeat(2,1fr); } .calc-top-bar { flex-direction: column; } }
   </style>
 </head>
 
@@ -385,9 +519,9 @@
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="cert-card w-100">
               <div class="cert-badge-area">
-                <div class="cert-icon-badge" style="background: linear-gradient(135deg,#6e3fff,#a855f7);">
-                  <i class="bx bx-brain"></i>
-                </div>
+                <img src="https://images.credly.com/size/340x340/images/4e3d6f9f-55d7-4ea7-b0b7-19ccdc17e5e7/blob" alt="PMI Generative AI Badge"
+                  style="max-width:110px;max-height:110px;object-fit:contain;"
+                  onerror="this.outerHTML='<div class=\'cert-icon-badge\' style=\'background:linear-gradient(135deg,#6e3fff,#a855f7)\'><i class=\'bx bx-brain\'></i></div>'">
               </div>
               <div class="cert-body">
                 <span class="cert-issuer">Project Management Institute (PMI)</span>
@@ -612,7 +746,10 @@
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="cert-card w-100">
               <div class="cert-badge-area">
-                <img src="img/certification/Coursera.png" alt="Coursera Certificate">
+                <!-- R language hexagonal badge -->
+                <div style="width:88px;height:88px;background:linear-gradient(150deg,#1e5fa8,#276dc3,#3a85d4);clip-path:polygon(50% 0%,96% 25%,96% 75%,50% 100%,4% 75%,4% 25%);display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 10px rgba(39,109,195,0.5));">
+                  <span style="font-size:2.6rem;font-weight:900;color:rgba(210,228,248,0.95);font-family:Georgia,serif;line-height:1;margin-top:4px;">R</span>
+                </div>
               </div>
               <div class="cert-body">
                 <span class="cert-issuer">Coursera · Johns Hopkins University</span>
@@ -639,7 +776,14 @@
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="cert-card w-100">
               <div class="cert-badge-area">
-                <img src="img/certification/Coursera.png" alt="Coursera Certificate">
+                <!-- Google Data Analytics badge -->
+                <svg viewBox="0 0 48 48" width="80" height="80" aria-label="Google Data Analytics">
+                  <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                  <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                  <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                  <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                  <path fill="none" d="M0 0h48v48H0z"/>
+                </svg>
               </div>
               <div class="cert-body">
                 <span class="cert-issuer">Coursera · Google</span>
@@ -879,30 +1023,216 @@
         <h2>Projects</h2>
       </div>
 
-      <div class="row portfolio-container">
+      <!-- ===== Pricing Intelligence Calculator ===== -->
+      <div class="calc-wrapper" id="pricingCalc">
+        <div class="calc-top-bar">
+          <div>
+            <h3><i class="bx bx-calculator" style="color:#149ddd;margin-right:8px;"></i>Pricing Intelligence Calculator</h3>
+            <p>Select your pricing method, enter cost structure &amp; volume — margin, profit and contract value update in real time.</p>
+          </div>
+          <div class="live-badge"><span class="live-dot"></span> Live</div>
+        </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item">
-          <center><h4>Weather Visualization</h4></center>
-          <br>
-          <div class="portfolio-wrap">
-            <img src="img/project/weather_plot.png" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover;">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="https://colab.research.google.com/drive/1DdmIXvD17Q-IEI_Zk3gSjwArA2MPgjNR?" data-gall="portfolioDetailsGallery" target="_blank" title="Weather_Visualization.py"><i class="bx bx-link"></i></a>
-                <a href="https://github.com/HardikPatel-DX/Analytics-Portfolio/blob/main/projects/weathervisual/README.md" target="_blank" title="View README"><i class="bx bx-book"></i> README</a>
+        <div class="calc-body">
+          <div class="row g-3">
+
+            <!-- LEFT: Inputs -->
+            <div class="col-lg-5">
+              <div class="calc-panel">
+
+                <h5>Cost Structure</h5>
+                <div class="calc-field">
+                  <label>Base Cost</label>
+                  <div class="input-prefix">
+                    <span>$</span>
+                    <input type="number" id="pc-cost" min="0" step="0.01" placeholder="0.00">
+                  </div>
+                </div>
+                <div class="calc-field">
+                  <label>Overhead <span class="val-badge" id="pc-overhead-val">0%</span></label>
+                  <input type="range" id="pc-overhead" class="calc-range" min="0" max="100" step="0.5" value="0">
+                </div>
+                <div class="calc-field">
+                  <label>Platform / Channel Fees <span class="val-badge" id="pc-platform-val">0%</span></label>
+                  <input type="range" id="pc-platform" class="calc-range" min="0" max="50" step="0.5" value="0">
+                </div>
+
+                <h5 class="mt">Pricing Method</h5>
+                <div class="calc-field">
+                  <div class="method-tabs" id="methodTabs">
+                    <button class="method-tab active" data-method="costplus">Cost-Plus</button>
+                    <button class="method-tab" data-method="listdown">List Down</button>
+                    <button class="method-tab" data-method="premium">Premium</button>
+                    <button class="method-tab" data-method="competitor">Competitor</button>
+                  </div>
+                </div>
+
+                <div class="method-input" id="mi-costplus">
+                  <div class="calc-field">
+                    <label>Target Margin <span class="val-badge" id="pc-margin-val">30%</span></label>
+                    <input type="range" id="pc-margin" class="calc-range" min="0" max="90" step="0.5" value="30">
+                  </div>
+                </div>
+                <div class="method-input hidden" id="mi-listdown">
+                  <div class="calc-field">
+                    <label>List / MSRP Price</label>
+                    <div class="input-prefix">
+                      <span>$</span>
+                      <input type="number" id="pc-list-price" min="0" step="0.01" placeholder="0.00">
+                    </div>
+                  </div>
+                </div>
+                <div class="method-input hidden" id="mi-premium">
+                  <div class="calc-field">
+                    <label>Premium Multiplier <span class="val-badge" id="pc-premium-val">1.5×</span></label>
+                    <input type="range" id="pc-premium" class="calc-range" min="1.0" max="5.0" step="0.1" value="1.5">
+                  </div>
+                </div>
+                <div class="method-input hidden" id="mi-competitor">
+                  <div class="calc-field">
+                    <label>Competitor Price</label>
+                    <div class="input-prefix">
+                      <span>$</span>
+                      <input type="number" id="pc-comp-price" min="0" step="0.01" placeholder="0.00">
+                    </div>
+                  </div>
+                </div>
+
+                <h5 class="mt">Contract &amp; Volume</h5>
+                <div class="row g-2">
+                  <div class="col-6">
+                    <div class="calc-field">
+                      <label>Quantity (units)</label>
+                      <input type="number" id="pc-qty" min="1" step="1" value="1" class="calc-input-full">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="calc-field">
+                      <label>Duration</label>
+                      <select id="pc-duration" class="calc-input-full">
+                        <option value="1">1 Month</option>
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12" selected>1 Year</option>
+                        <option value="24">2 Years</option>
+                        <option value="36">3 Years</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- RIGHT: Live Results -->
+            <div class="col-lg-7">
+              <div class="calc-panel results-panel">
+                <h5>Live Analysis</h5>
+
+                <div class="calc-waterfall">
+                  <div class="wf-row">
+                    <span>Base Cost</span><span id="out-base-cost">$0.00</span>
+                  </div>
+                  <div class="wf-row sub">
+                    <span>+ Overhead</span><span id="out-overhead-amt">$0.00</span>
+                  </div>
+                  <div class="wf-row sub">
+                    <span>+ Platform Fees</span><span id="out-platform-amt">$0.00</span>
+                  </div>
+                  <div class="wf-row total">
+                    <span>Total Cost / Unit</span><span id="out-total-cost">$0.00</span>
+                  </div>
+                  <div class="wf-row price">
+                    <span>Selling Price / Unit</span><span id="out-price">$0.00</span>
+                  </div>
+                  <div class="wf-row profit">
+                    <span>Gross Profit / Unit</span><span id="out-profit">$0.00</span>
+                  </div>
+                </div>
+
+                <div class="margin-gauge">
+                  <div class="margin-label">Gross Margin</div>
+                  <div class="margin-bar-wrap"><div class="margin-bar" id="margin-bar"></div></div>
+                  <div class="margin-pct" id="out-margin">0.0%</div>
+                </div>
+
+                <div class="cs-row">
+                  <div class="cs-stat">
+                    <div class="cs-val" id="out-contract-val">$0</div>
+                    <div class="cs-key">Contract Value</div>
+                  </div>
+                  <div class="cs-stat">
+                    <div class="cs-val" id="out-duration-label">12 mo.</div>
+                    <div class="cs-key">Duration</div>
+                  </div>
+                  <div class="cs-stat">
+                    <div class="cs-val" id="out-qty-label">1</div>
+                    <div class="cs-key">Units</div>
+                  </div>
+                  <div class="cs-stat">
+                    <div class="cs-val" id="out-breakeven">—</div>
+                    <div class="cs-key">Break-even</div>
+                  </div>
+                </div>
+
+                <div class="method-insight">
+                  <i class="bx bx-info-circle"></i>
+                  <span id="method-insight-text">Cost-Plus: selling price is derived from total cost at your target margin — guarantees profitability but ignores market signals.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- ===== End Pricing Calculator ===== -->
+
+      <!-- Project Cards -->
+      <div class="row proj-grid">
+
+        <div class="col-lg-6 col-md-6 d-flex">
+          <div class="proj-card w-100">
+            <img src="img/project/weather_plot.png" class="proj-img" alt="Weather Visualization">
+            <div class="proj-header">
+              <span class="proj-category" style="background:rgba(20,157,221,0.15);color:#149ddd;border:1px solid rgba(20,157,221,0.3);">Data Visualization</span>
+              <h4 class="proj-title">Weather Data Visualization</h4>
+              <p class="proj-desc">Pulls live weather data via API and renders multi-layered visualizations — temperature trends, precipitation heatmaps, and seasonal patterns — directly in Google Colab. Demonstrates end-to-end data pipeline from ingestion to storytelling.</p>
+            </div>
+            <div class="proj-footer">
+              <div class="proj-tags">
+                <span class="proj-tag">Python</span>
+                <span class="proj-tag">Matplotlib</span>
+                <span class="proj-tag">Pandas</span>
+                <span class="proj-tag">REST API</span>
+                <span class="proj-tag">Colab</span>
+              </div>
+              <div class="proj-links">
+                <a href="https://colab.research.google.com/drive/1DdmIXvD17Q-IEI_Zk3gSjwArA2MPgjNR?" target="_blank" class="proj-link-btn primary"><i class="bx bx-play-circle"></i> Open</a>
+                <a href="https://github.com/HardikPatel-DX/Analytics-Portfolio/blob/main/projects/weathervisual/README.md" target="_blank" class="proj-link-btn secondary">README</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item">
-          <center><h4>DataInsight - Plug & Play Data Analysis</h4></center>
-          <div class="portfolio-wrap">
-            <img src="img/project/plugnplay.jpeg" class="img-fluid" alt="DataInsight Project" style="width: 100%; height: 200px; object-fit: cover;">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="https://datainsightplugnplay.streamlit.app/" data-gall="portfolioDetailsGallery" target="_blank" title="Try the App"><i class="bx bx-link"></i></a>
-                <a href="https://github.com/HardikPatel-DX/DataInsight/blob/main/README.md" target="_blank" title="View README"><i class="bx bx-book"></i> README</a>
+        <div class="col-lg-6 col-md-6 d-flex">
+          <div class="proj-card w-100">
+            <img src="img/project/plugnplay.jpeg" class="proj-img" alt="DataInsight">
+            <div class="proj-header">
+              <span class="proj-category" style="background:rgba(106,63,255,0.15);color:#a78bfa;border:1px solid rgba(106,63,255,0.3);">Analytics App</span>
+              <h4 class="proj-title">DataInsight — Plug &amp; Play Analysis</h4>
+              <p class="proj-desc">Upload any CSV and get instant descriptive stats, correlation matrices, distribution plots, and outlier detection — no code required. Built for business users who need answers from data without writing a single line of Python.</p>
+            </div>
+            <div class="proj-footer">
+              <div class="proj-tags">
+                <span class="proj-tag">Python</span>
+                <span class="proj-tag">Streamlit</span>
+                <span class="proj-tag">Pandas</span>
+                <span class="proj-tag">Plotly</span>
+                <span class="proj-tag">No-Code</span>
+              </div>
+              <div class="proj-links">
+                <a href="https://datainsightplugnplay.streamlit.app/" target="_blank" class="proj-link-btn primary"><i class="bx bx-rocket"></i> Live App</a>
+                <a href="https://github.com/HardikPatel-DX/DataInsight/blob/main/README.md" target="_blank" class="proj-link-btn secondary">README</a>
               </div>
             </div>
           </div>
@@ -923,38 +1253,36 @@
       <div class="row">
         <div class="col-lg-12" data-aos="fade-up">
 
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Languages and Databases</h4>
-            <p style="text-align:left;">
-              <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="vectorlogo.zone" height="50" width="150">
-              <img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="vectorlogo.zone" height="70" width="130">
-              <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="vectorlogo.zone" height="50" width="190">
+          <div class="col-md-12 mt-4 mt-md-0 icon-box skills-box" data-aos="fade-up" data-aos-delay="100">
+            <h4 style="text-align:left;">Languages and Databases</h4>
+            <p style="text-align:left;line-height:2.4;">
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="Python" height="36" width="110"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="MySQL" height="44" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="PostgreSQL" height="36" width="140"></span>
             </p>
           </div>
 
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Intelligence Tools</h4>
-            <p style="text-align:left;">
-              <img src="https://www.vectorlogo.zone/logos/microsoft_powerbi/microsoft_powerbi-ar21.svg" alt="vectorlogo.zone">
-              <img src="img/certification/tableau.svg" class="img-fluid" alt="" style="width: 130px; height: 50px;">
+          <div class="col-md-12 mt-4 mt-md-0 icon-box skills-box" data-aos="fade-up" data-aos-delay="100">
+            <h4 style="text-align:left;">Intelligence Tools</h4>
+            <p style="text-align:left;line-height:2.4;">
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/microsoft_powerbi/microsoft_powerbi-ar21.svg" alt="Power BI" height="40" width="120"></span>
+              <span class="skill-logo-pill"><img src="img/certification/tableau.svg" alt="Tableau" width="110" height="36"></span>
             </p>
           </div>
 
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Tools</h4>
-            <p style="text-align:left;">
-              <img src="https://www.vectorlogo.zone/logos/microsoft_vb/microsoft_vb-ar21.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-ar21.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/google_analytics/google_analytics-ar21~old.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-ar21~bgwhite.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/json/json-ar21~bgwhite.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/java/java-ar21~bgwhite.svg" alt="vectorlogo.zone">
-              <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21~bgwhite.svg" alt="vectorlogo.zone">
+          <div class="col-md-12 mt-4 mt-md-0 icon-box skills-box" data-aos="fade-up" data-aos-delay="100">
+            <h4 style="text-align:left;">Tools &amp; Platforms</h4>
+            <p style="text-align:left;line-height:2.4;">
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/microsoft_vb/microsoft_vb-ar21.svg" alt="VBA" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-ar21.svg" alt="VS Code" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" alt="GitHub" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/google_analytics/google_analytics-ar21~old.svg" alt="Google Analytics" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="AWS" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="GCP" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="Jupyter" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-ar21~bgwhite.svg" alt="Tailwind" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/java/java-ar21~bgwhite.svg" alt="Java" height="36" width="100"></span>
+              <span class="skill-logo-pill"><img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21~bgwhite.svg" alt="Microsoft" height="36" width="100"></span>
             </p>
           </div>
 
@@ -1084,6 +1412,128 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Pricing Calculator Logic -->
+  <script>
+  (function () {
+    var currentMethod = 'costplus';
+    var insights = {
+      costplus:   'Cost-Plus: selling price is derived from total cost at your target margin — guarantees profitability but ignores market signals.',
+      listdown:   'List Down: you start from a fixed list/MSRP price and see what margin remains after all your costs are deducted.',
+      premium:    'Premium: price is a direct multiple of total cost — ideal for differentiated or high-value products where premium positioning matters.',
+      competitor: 'Competitor Match: you price at the market rate. Your margin depends entirely on how lean your cost structure is relative to competition.'
+    };
+    var durLabels = { 1:'1 mo.', 3:'3 mo.', 6:'6 mo.', 12:'12 mo.', 24:'24 mo.', 36:'36 mo.' };
+
+    function fmt(n) {
+      if (isNaN(n)) return '$0.00';
+      return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    function fmtBig(n) {
+      if (isNaN(n) || n === 0) return '$0';
+      var abs = Math.abs(n);
+      if (abs >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+      if (abs >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+      return '$' + n.toFixed(2);
+    }
+    function setText(id, v) { var e = document.getElementById(id); if (e) e.textContent = v; }
+    function getVal(id) { var e = document.getElementById(id); return e ? parseFloat(e.value) || 0 : 0; }
+
+    function calc() {
+      var baseCost   = getVal('pc-cost');
+      var overhead   = getVal('pc-overhead');
+      var platform   = getVal('pc-platform');
+      var qty        = Math.max(1, getVal('pc-qty'));
+      var durEl      = document.getElementById('pc-duration');
+      var duration   = durEl ? parseInt(durEl.value) || 12 : 12;
+
+      var overheadAmt  = baseCost * overhead / 100;
+      var platformAmt  = baseCost * platform / 100;
+      var totalCost    = baseCost + overheadAmt + platformAmt;
+
+      var price = 0, effectiveMargin = 0;
+      if (currentMethod === 'costplus') {
+        var m = getVal('pc-margin');
+        price = m < 100 ? totalCost / (1 - m / 100) : totalCost * 2;
+        effectiveMargin = m;
+      } else if (currentMethod === 'listdown') {
+        price = getVal('pc-list-price');
+        effectiveMargin = price > 0 ? (price - totalCost) / price * 100 : 0;
+      } else if (currentMethod === 'premium') {
+        var mult = getVal('pc-premium') || 1.5;
+        price = totalCost * mult;
+        effectiveMargin = price > 0 ? (price - totalCost) / price * 100 : 0;
+      } else {
+        price = getVal('pc-comp-price');
+        effectiveMargin = price > 0 ? (price - totalCost) / price * 100 : 0;
+      }
+
+      var profit       = price - totalCost;
+      var contractVal  = price * qty * duration;
+      var breakEven    = (overheadAmt > 0 && profit > 0) ? Math.ceil(overheadAmt / profit) : null;
+
+      setText('out-base-cost',    fmt(baseCost));
+      setText('out-overhead-amt', fmt(overheadAmt));
+      setText('out-platform-amt', fmt(platformAmt));
+      setText('out-total-cost',   fmt(totalCost));
+      setText('out-price',        fmt(price));
+      setText('out-profit',       fmt(profit));
+      setText('out-contract-val', fmtBig(contractVal));
+      setText('out-duration-label', durLabels[duration] || duration + ' mo.');
+      setText('out-qty-label',    qty.toLocaleString());
+      setText('out-breakeven',    breakEven !== null ? breakEven.toLocaleString() + ' u' : '—');
+
+      var mBar = document.getElementById('margin-bar');
+      var mPct = document.getElementById('out-margin');
+      if (mPct) mPct.textContent = effectiveMargin.toFixed(1) + '%';
+      var clamp = Math.max(0, Math.min(100, effectiveMargin));
+      if (mBar) mBar.style.width = clamp + '%';
+      var color = effectiveMargin < 0 ? '#ef5350' : effectiveMargin < 15 ? '#ffa726' : effectiveMargin < 30 ? '#66bb6a' : '#42a5f5';
+      if (mBar) mBar.style.background = color;
+      if (mPct) mPct.style.color = color;
+    }
+
+    function switchMethod(method) {
+      currentMethod = method;
+      ['costplus','listdown','premium','competitor'].forEach(function (m) {
+        var el = document.getElementById('mi-' + m);
+        if (el) el.classList.toggle('hidden', m !== method);
+      });
+      document.querySelectorAll('.method-tab').forEach(function (btn) {
+        btn.classList.toggle('active', btn.dataset.method === method);
+      });
+      setText('method-insight-text', insights[method] || '');
+      calc();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.method-tab').forEach(function (btn) {
+        btn.addEventListener('click', function () { switchMethod(this.dataset.method); });
+      });
+      [
+        ['pc-overhead', 'pc-overhead-val', 0, '%'],
+        ['pc-platform', 'pc-platform-val', 0, '%'],
+        ['pc-margin',   'pc-margin-val',   0, '%'],
+        ['pc-premium',  'pc-premium-val',  1, '×']
+      ].forEach(function (row) {
+        var el = document.getElementById(row[0]);
+        var vl = document.getElementById(row[1]);
+        if (!el || !vl) return;
+        var upd = function () {
+          vl.textContent = parseFloat(el.value).toFixed(row[2]) + row[3];
+          calc();
+        };
+        el.addEventListener('input', upd);
+        upd();
+      });
+      ['pc-cost','pc-list-price','pc-comp-price','pc-qty','pc-duration'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('input', calc);
+      });
+      calc();
+    });
+  })();
+  </script>
 
   <!-- Contact info: assembled at runtime to prevent scraping -->
   <script>
