@@ -202,6 +202,117 @@
       vertical-align: middle;
     }
 
+    /* ---- CSV Explorer ---- */
+    .csv-explorer { background:linear-gradient(135deg,#0a1628,#12223a); border-radius:16px; border:1px solid rgba(20,157,221,0.2); overflow:hidden; }
+    .csv-exp-header { background:linear-gradient(90deg,rgba(20,157,221,0.14),rgba(102,187,106,0.08)); padding:16px 24px; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .csv-exp-header h3 { margin:0; font-size:1.05rem; font-weight:700; color:#fff; }
+    .csv-exp-header p { margin:3px 0 0; font-size:0.78rem; color:#aaa; }
+    .csv-upload-zone { margin:20px 24px 0; border:2px dashed rgba(20,157,221,0.3); border-radius:12px; padding:36px 20px; text-align:center; cursor:pointer; transition:all 0.2s; background:rgba(20,157,221,0.03); }
+    .csv-upload-zone:hover, .csv-upload-zone.drag-over { border-color:#149ddd; background:rgba(20,157,221,0.09); }
+    .csv-upload-zone i { font-size:2.4rem; color:#149ddd; display:block; margin-bottom:9px; }
+    .csv-upload-zone p { color:#bbb; margin:0 0 5px; font-size:0.88rem; }
+    .csv-upload-zone p span { color:#149ddd; font-weight:600; text-decoration:underline; }
+    .csv-upload-zone small { color:#555; font-size:0.71rem; }
+    .csv-results { padding:16px 24px 22px; }
+    .csv-results.hidden { display:none; }
+    .csv-overview { display:flex; flex-wrap:wrap; gap:0; background:rgba(0,0,0,0.22); border-radius:10px; padding:12px 6px; margin-bottom:16px; }
+    .ov-stat { flex:1; min-width:80px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); padding:4px 10px; }
+    .ov-stat:last-child { border-right:none; }
+    .ov-val { font-size:1.25rem; font-weight:800; color:#149ddd; font-family:monospace; line-height:1.1; }
+    .ov-key { font-size:0.63rem; color:#777; text-transform:uppercase; letter-spacing:0.7px; margin-top:3px; }
+    .csv-body { display:flex; gap:14px; margin-bottom:16px; }
+    .csv-col-list { width:165px; flex-shrink:0; background:rgba(0,0,0,0.2); border-radius:10px; padding:11px; max-height:370px; overflow-y:auto; }
+    .csv-col-list::-webkit-scrollbar { width:4px; } .csv-col-list::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.15); border-radius:4px; }
+    .csv-col-list-title { font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#555; margin-bottom:8px; padding:0 4px; }
+    .col-item { padding:6px 9px; border-radius:7px; cursor:pointer; font-size:0.78rem; color:#bbb; transition:all 0.15s; display:flex; align-items:center; gap:5px; overflow:hidden; border:1px solid transparent; margin-bottom:3px; }
+    .col-item:hover { background:rgba(255,255,255,0.07); color:#fff; }
+    .col-item.active { background:rgba(20,157,221,0.15); color:#149ddd; border-color:rgba(20,157,221,0.3); }
+    .col-item span { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .col-type-badge { font-size:0.57rem; font-weight:700; padding:1px 5px; border-radius:4px; flex-shrink:0; }
+    .type-num { background:rgba(20,157,221,0.2); color:#149ddd; }
+    .type-cat { background:rgba(160,100,255,0.2); color:#a855f7; }
+    .type-date { background:rgba(102,187,106,0.2); color:#66bb6a; }
+    .csv-analysis-panel { flex:1; min-width:0; background:rgba(0,0,0,0.18); border-radius:10px; padding:15px; }
+    .csv-analysis-panel h5 { color:#149ddd; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin:0 0 11px; }
+    .stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-bottom:12px; }
+    .stat-box { background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 9px; border:1px solid rgba(255,255,255,0.07); }
+    .stat-box .sv { font-size:0.92rem; font-weight:800; color:#fff; font-family:monospace; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .stat-box .sk { font-size:0.6rem; color:#777; text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; }
+    .stat-box.hi .sv { color:#149ddd; }
+    .chart-wrap { position:relative; height:175px; }
+    .csv-insights-box { background:rgba(0,0,0,0.15); border-radius:10px; padding:13px 15px; border:1px solid rgba(255,255,255,0.06); }
+    .csv-insights-box h5 { color:#f0c040; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin:0 0 9px; display:flex; align-items:center; gap:6px; }
+    .insight-item { font-size:0.8rem; color:#bbb; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05); display:flex; align-items:flex-start; gap:8px; line-height:1.5; }
+    .insight-item:last-child { border-bottom:none; }
+    .insight-item i { color:#f0c040; font-size:0.83rem; margin-top:2px; flex-shrink:0; }
+    .insight-item strong { color:#fff; }
+    .csv-no-sel { text-align:center; padding:40px 20px; color:#444; font-size:0.84rem; }
+    @media (max-width:767px) { .csv-body { flex-direction:column; } .csv-col-list { width:100%; max-height:140px; } .stat-grid { grid-template-columns:repeat(2,1fr); } }
+
+    /* ---- Margin Erosion Tracker ---- */
+    .met-wrapper { background:linear-gradient(135deg,#0a1628,#12223a); border-radius:16px; border:1px solid rgba(20,157,221,0.2); overflow:hidden; }
+    .met-header { background:linear-gradient(90deg,rgba(239,83,80,0.12),rgba(20,157,221,0.1)); padding:16px 24px; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .met-header h3 { margin:0; font-size:1.05rem; font-weight:700; color:#fff; }
+    .met-header p { margin:3px 0 0; font-size:0.78rem; color:#aaa; }
+    .met-learn-btn { display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:8px; font-size:0.76rem; font-weight:700; background:rgba(255,255,255,0.07); color:#ccc; border:1px solid rgba(255,255,255,0.13); cursor:pointer; transition:all 0.2s; }
+    .met-learn-btn:hover { background:rgba(255,255,255,0.14); color:#fff; }
+    .met-upload-wrap { padding:18px 22px 0; }
+    .met-results { padding:16px 22px 22px; }
+    .met-results.hidden { display:none; }
+    /* Overview pills */
+    .met-overview { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px; }
+    .met-ov-card { background:rgba(0,0,0,0.22); border-radius:10px; padding:12px 14px; border:1px solid rgba(255,255,255,0.07); }
+    .met-ov-val { font-size:1.3rem; font-weight:800; font-family:monospace; line-height:1.1; }
+    .met-ov-key { font-size:0.62rem; color:#777; text-transform:uppercase; letter-spacing:0.6px; margin-top:3px; }
+    .met-ov-card.good .met-ov-val { color:#66bb6a; }
+    .met-ov-card.bad  .met-ov-val { color:#ef5350; }
+    .met-ov-card.warn .met-ov-val { color:#ffa726; }
+    .met-ov-card.info .met-ov-val { color:#149ddd; }
+    /* Body split */
+    .met-body { display:flex; gap:14px; margin-bottom:16px; }
+    .met-chart-panel { flex:1.3; min-width:0; background:rgba(0,0,0,0.18); border-radius:10px; padding:15px; }
+    .met-table-panel { flex:1; min-width:0; background:rgba(0,0,0,0.18); border-radius:10px; padding:15px; overflow-x:auto; }
+    .met-panel-title { color:#149ddd; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin:0 0 12px; }
+    .met-chart-wrap { position:relative; height:200px; }
+    .met-table { width:100%; border-collapse:collapse; font-size:0.77rem; }
+    .met-table th { color:#555; font-weight:700; text-transform:uppercase; font-size:0.62rem; letter-spacing:0.6px; padding:5px 8px; border-bottom:1px solid rgba(255,255,255,0.08); text-align:left; }
+    .met-table td { padding:7px 8px; border-bottom:1px solid rgba(255,255,255,0.05); color:#ccc; }
+    .met-table tr:last-child td { border-bottom:none; }
+    .met-table .prod-name { max-width:120px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#fff; font-weight:600; }
+    .ero-pill { display:inline-block; padding:2px 7px; border-radius:20px; font-size:0.72rem; font-weight:700; font-family:monospace; }
+    .ero-bad  { background:rgba(239,83,80,0.18);  color:#ef5350; }
+    .ero-good { background:rgba(102,187,106,0.18); color:#66bb6a; }
+    .ero-warn { background:rgba(255,167,38,0.18);  color:#ffa726; }
+    /* Insights */
+    .met-insights { background:rgba(0,0,0,0.15); border-radius:10px; padding:13px 15px; border:1px solid rgba(255,255,255,0.06); }
+    .met-insights-title { color:#f0c040; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin:0 0 9px; display:flex; align-items:center; gap:6px; }
+    .met-insight-item { font-size:0.8rem; color:#bbb; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05); display:flex; align-items:flex-start; gap:8px; line-height:1.5; }
+    .met-insight-item:last-child { border-bottom:none; }
+    .met-insight-item i { font-size:0.83rem; margin-top:2px; flex-shrink:0; }
+    .met-insight-item strong { color:#fff; }
+    /* Instructions Modal */
+    .met-modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(4px); }
+    .met-modal-overlay.hidden { display:none; }
+    .met-modal { background:#0f1e30; border:1px solid rgba(20,157,221,0.3); border-radius:16px; width:100%; max-width:640px; max-height:88vh; overflow-y:auto; box-shadow:0 24px 60px rgba(0,0,0,0.6); }
+    .met-modal::-webkit-scrollbar { width:5px; } .met-modal::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.15); border-radius:4px; }
+    .met-modal-head { padding:20px 24px 14px; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+    .met-modal-head h4 { margin:0; font-size:1rem; font-weight:700; color:#fff; }
+    .met-modal-head p { margin:4px 0 0; font-size:0.78rem; color:#aaa; }
+    .met-modal-close { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); color:#aaa; border-radius:7px; width:30px; height:30px; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.2s; }
+    .met-modal-close:hover { background:rgba(239,83,80,0.2); color:#ef5350; border-color:rgba(239,83,80,0.3); }
+    .met-modal-body { padding:18px 24px 24px; }
+    .met-col-table { width:100%; border-collapse:collapse; font-size:0.8rem; margin-bottom:18px; }
+    .met-col-table th { background:rgba(20,157,221,0.1); color:#149ddd; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.7px; padding:7px 12px; text-align:left; }
+    .met-col-table td { padding:8px 12px; border-bottom:1px solid rgba(255,255,255,0.06); color:#ccc; vertical-align:top; }
+    .met-col-table td:first-child { color:#fff; font-weight:600; white-space:nowrap; }
+    .met-col-table .req-badge { display:inline-block; font-size:0.62rem; font-weight:700; padding:1px 6px; border-radius:4px; background:rgba(239,83,80,0.2); color:#ef5350; margin-left:4px; }
+    .met-col-table .opt-badge { display:inline-block; font-size:0.62rem; font-weight:700; padding:1px 6px; border-radius:4px; background:rgba(102,187,106,0.18); color:#66bb6a; margin-left:4px; }
+    .met-section-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#149ddd; margin:0 0 8px; }
+    .met-code-block { background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px 14px; font-family:monospace; font-size:0.75rem; color:#a0c4e8; line-height:1.8; white-space:pre; overflow-x:auto; margin-bottom:16px; }
+    .met-dl-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:8px; font-size:0.78rem; font-weight:700; background:rgba(20,157,221,0.15); color:#149ddd; border:1px solid rgba(20,157,221,0.35); cursor:pointer; text-decoration:none !important; transition:all 0.2s; }
+    .met-dl-btn:hover { background:#149ddd; color:#fff; }
+    @media (max-width:767px) { .met-overview{grid-template-columns:repeat(2,1fr);} .met-body{flex-direction:column;} }
+
     /* ---- Project Cards ---- */
     .proj-grid { row-gap: 28px; }
     .proj-card {
@@ -1254,58 +1365,63 @@
       </div>
       <!-- ===== End Pricing Calculator ===== -->
 
-      <!-- Project Cards -->
-      <div class="row proj-grid">
+      <!-- ===== Margin Erosion Tracker ===== -->
+      <div class="met-wrapper" id="marginTracker">
 
-        <div class="col-lg-6 col-md-6 d-flex">
-          <div class="proj-card w-100">
-            <img src="img/project/weather_plot.png" class="proj-img" alt="Weather Visualization">
-            <div class="proj-header">
-              <span class="proj-category" style="background:rgba(20,157,221,0.15);color:#149ddd;border:1px solid rgba(20,157,221,0.3);">Data Visualization</span>
-              <h4 class="proj-title">Weather Data Visualization</h4>
-              <p class="proj-desc">Pulls live weather data via API and renders multi-layered visualizations — temperature trends, precipitation heatmaps, and seasonal patterns — directly in Google Colab. Demonstrates end-to-end data pipeline from ingestion to storytelling.</p>
-            </div>
-            <div class="proj-footer">
-              <div class="proj-tags">
-                <span class="proj-tag">Python</span>
-                <span class="proj-tag">Matplotlib</span>
-                <span class="proj-tag">Pandas</span>
-                <span class="proj-tag">REST API</span>
-                <span class="proj-tag">Colab</span>
-              </div>
-              <div class="proj-links">
-                <a href="https://colab.research.google.com/drive/1DdmIXvD17Q-IEI_Zk3gSjwArA2MPgjNR?" target="_blank" class="proj-link-btn primary"><i class="bx bx-play-circle"></i> Open</a>
-                <a href="https://github.com/HardikPatel-DX/Analytics-Portfolio/blob/main/projects/weathervisual/README.md" target="_blank" class="proj-link-btn secondary">README</a>
-              </div>
-            </div>
+        <div class="met-header">
+          <div>
+            <h3><i class="bx bx-trending-down" style="color:#ef5350;margin-right:8px;"></i>Margin Erosion Tracker</h3>
+            <p>Upload your pricing &amp; cost data to pinpoint where margins are eroding — by product, category, and time period — with root-cause attribution.</p>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap;">
+            <button class="met-learn-btn" onclick="openMetModal()"><i class="bx bx-info-circle"></i> How It Works</button>
+            <div class="live-badge"><span class="live-dot"></span> Live</div>
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 d-flex">
-          <div class="proj-card w-100">
-            <img src="img/project/plugnplay.jpeg" class="proj-img" alt="DataInsight">
-            <div class="proj-header">
-              <span class="proj-category" style="background:rgba(106,63,255,0.15);color:#a78bfa;border:1px solid rgba(106,63,255,0.3);">Analytics App</span>
-              <h4 class="proj-title">DataInsight — Plug &amp; Play Analysis</h4>
-              <p class="proj-desc">Upload any CSV and get instant descriptive stats, correlation matrices, distribution plots, and outlier detection — no code required. Built for business users who need answers from data without writing a single line of Python.</p>
-            </div>
-            <div class="proj-footer">
-              <div class="proj-tags">
-                <span class="proj-tag">Python</span>
-                <span class="proj-tag">Streamlit</span>
-                <span class="proj-tag">Pandas</span>
-                <span class="proj-tag">Plotly</span>
-                <span class="proj-tag">No-Code</span>
-              </div>
-              <div class="proj-links">
-                <a href="https://datainsightplugnplay.streamlit.app/" target="_blank" class="proj-link-btn primary"><i class="bx bx-rocket"></i> Live App</a>
-                <a href="https://github.com/HardikPatel-DX/DataInsight/blob/main/README.md" target="_blank" class="proj-link-btn secondary">README</a>
-              </div>
-            </div>
+        <div class="met-upload-wrap">
+          <div class="csv-upload-zone" id="metUploadZone">
+            <input type="file" id="metFileInput" accept=".csv" style="display:none">
+            <i class="bx bx-cloud-upload"></i>
+            <p>Drop your pricing CSV here or <span>click to upload</span></p>
+            <small>
+              <span onclick="openMetModal()" style="color:#149ddd;cursor:pointer;text-decoration:underline;">View required columns &amp; sample format</span>
+              &nbsp;·&nbsp; Data stays in your browser
+            </small>
           </div>
         </div>
 
+        <div class="met-results hidden" id="metResults">
+
+          <div class="met-overview" id="metOverview"></div>
+
+          <div class="met-body">
+            <div class="met-chart-panel">
+              <div class="met-panel-title">Gross Margin % — Trend</div>
+              <div class="met-chart-wrap"><canvas id="metChart"></canvas></div>
+            </div>
+            <div class="met-table-panel">
+              <div class="met-panel-title">Erosion by Product / SKU</div>
+              <table class="met-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Baseline</th>
+                    <th>Current</th>
+                    <th>Erosion</th>
+                    <th>Driver</th>
+                  </tr>
+                </thead>
+                <tbody id="metTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="met-insights" id="metInsights"></div>
+
+        </div>
       </div>
+      <!-- ===== End Margin Erosion Tracker ===== -->
     </div>
   </section>
   <!-- End Project Section -->
@@ -1598,6 +1714,443 @@
         if (el) el.addEventListener('input', calc);
       });
       calc();
+    });
+  })();
+  </script>
+
+  <!-- ===== Margin Erosion Tracker: Instructions Modal ===== -->
+  <div class="met-modal-overlay hidden" id="metModal" onclick="if(event.target===this)closeMetModal()">
+    <div class="met-modal">
+      <div class="met-modal-head">
+        <div>
+          <h4><i class="bx bx-trending-down" style="color:#ef5350;margin-right:6px;"></i>How to Use the Margin Erosion Tracker</h4>
+          <p>Prepare your CSV with the columns below, upload it, and get instant margin analysis.</p>
+        </div>
+        <button class="met-modal-close" onclick="closeMetModal()">&#x2715;</button>
+      </div>
+      <div class="met-modal-body">
+
+        <p class="met-section-label">Required Columns <span style="color:#ef5350;">(must be present)</span></p>
+        <table class="met-col-table">
+          <thead><tr><th>Column</th><th>Accepted Header Names</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Date / Period <span class="req-badge">REQ</span></td>
+              <td><code>date, period, month, year, quarter, week</code></td>
+              <td>YYYY-MM, MM/YYYY, Q1-2024, or full dates</td>
+            </tr>
+            <tr>
+              <td>Product / SKU <span class="req-badge">REQ</span></td>
+              <td><code>product, sku, item, description, name, part</code></td>
+              <td>Any text identifier per line</td>
+            </tr>
+            <tr>
+              <td>Revenue / Sales <span class="req-badge">REQ</span></td>
+              <td><code>revenue, sales, net sales, gross sales</code></td>
+              <td>Dollar amount per row (e.g. 12500 or $12,500)</td>
+            </tr>
+            <tr>
+              <td>Cost / COGS <span class="req-badge">REQ</span></td>
+              <td><code>cost, cogs, cost of goods, total cost, direct cost</code></td>
+              <td>Dollar amount per row — must be &lt; revenue for positive margin</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="met-section-label" style="margin-top:4px;">Optional Columns <span style="color:#66bb6a;">(unlock richer insights)</span></p>
+        <table class="met-col-table">
+          <thead><tr><th>Column</th><th>Accepted Header Names</th><th>Unlocks</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Category <span class="opt-badge">OPT</span></td>
+              <td><code>category, segment, family, group, class, dept</code></td>
+              <td>Erosion grouped by segment</td>
+            </tr>
+            <tr>
+              <td>Volume / Units <span class="opt-badge">OPT</span></td>
+              <td><code>units, volume, qty, quantity, pieces</code></td>
+              <td>Mix-shift vs. rate analysis</td>
+            </tr>
+            <tr>
+              <td>Unit Price <span class="opt-badge">OPT</span></td>
+              <td><code>price, unit price, selling price, list price, asp</code></td>
+              <td>Price-driven vs. cost-driven root cause</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="met-section-label">Sample CSV Format</p>
+        <div class="met-code-block">Date,Product,Category,Revenue,Cost,Units
+2024-01,Widget A,Electronics,10000,7000,100
+2024-01,Widget B,Accessories,5000,4000,80
+2024-02,Widget A,Electronics,9500,7500,95
+2024-02,Widget B,Accessories,4800,4100,78
+2024-03,Widget A,Electronics,9200,7800,92
+2024-03,Widget B,Accessories,4600,4250,75</div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="met-dl-btn" onclick="downloadSampleCSV()"><i class="bx bx-download"></i> Download Sample CSV</button>
+          <button class="met-dl-btn" style="background:rgba(102,187,106,0.15);color:#66bb6a;border-color:rgba(102,187,106,0.35);" onclick="closeMetModal();document.getElementById('metFileInput').click()"><i class="bx bx-upload"></i> Upload My File</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Margin Erosion Tracker Logic -->
+  <script>
+  (function () {
+    var metChart = null;
+
+    /* ---- Helpers ---- */
+    function parseNum(v) {
+      if (!v && v !== 0) return NaN;
+      return parseFloat(String(v).replace(/[$,%\s]/g, ''));
+    }
+    function fmtPct(n, d) { return isNaN(n) ? '—' : n.toFixed(d !== undefined ? d : 1) + '%'; }
+    function fmtM(n) {
+      if (isNaN(n)) return '—';
+      var a = Math.abs(n);
+      if (a >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+      if (a >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+      return n.toFixed(0);
+    }
+
+    /* ---- Column finder (fuzzy) ---- */
+    function findCol(headers, candidates) {
+      var h = headers.map(function (s) { return s.toLowerCase().replace(/[_\s]/g, ''); });
+      for (var ci = 0; ci < candidates.length; ci++) {
+        var c = candidates[ci].replace(/\s/g, '');
+        for (var hi = 0; hi < h.length; hi++) {
+          if (h[hi] === c || h[hi].includes(c) || c.includes(h[hi])) return hi;
+        }
+      }
+      return -1;
+    }
+
+    /* ---- CSV Parser ---- */
+    function parseCSV(text) {
+      var lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').trim().split('\n');
+      if (lines.length < 2) return null;
+      var delim = detectDelim(lines[0]);
+      var headers = splitRow(lines[0], delim).map(function (h) { return h.replace(/^"|"$/g, '').trim(); });
+      var rows = [];
+      for (var i = 1; i < lines.length; i++) {
+        var line = lines[i].trim();
+        if (!line) continue;
+        var row = splitRow(line, delim);
+        while (row.length < headers.length) row.push('');
+        rows.push(row.slice(0, headers.length));
+      }
+      return { headers: headers, rows: rows };
+    }
+    function detectDelim(line) {
+      var t = (line.match(/\t/g) || []).length;
+      var s = (line.match(/;/g) || []).length;
+      var c = (line.match(/,/g) || []).length;
+      return t > c && t > s ? '\t' : s > c ? ';' : ',';
+    }
+    function splitRow(line, delim) {
+      var res = [], cur = '', inQ = false;
+      for (var i = 0; i < line.length; i++) {
+        var ch = line[i];
+        if (ch === '"') { inQ = !inQ; }
+        else if (ch === delim && !inQ) { res.push(cur.trim()); cur = ''; }
+        else { cur += ch; }
+      }
+      res.push(cur.trim());
+      return res;
+    }
+
+    /* ---- Normalize date → sortable string ---- */
+    function normDate(v) {
+      if (!v) return '';
+      v = v.trim();
+      // Q1-2024 or Q1 2024
+      var qm = v.match(/Q([1-4])[\s\-]?(\d{4})/i);
+      if (qm) return qm[2] + '-Q' + qm[1];
+      // YYYY-MM-DD or YYYY/MM/DD
+      var ym = v.match(/(\d{4})[-\/](\d{1,2})/);
+      if (ym) return ym[1] + '-' + ym[2].padStart(2, '0');
+      // MM/YYYY or MM-YYYY
+      var my = v.match(/^(\d{1,2})[-\/](\d{4})$/);
+      if (my) return my[2] + '-' + my[1].padStart(2, '0');
+      // Just year
+      if (/^\d{4}$/.test(v)) return v;
+      return v;
+    }
+
+    /* ---- Main analysis ---- */
+    function analyze(raw) {
+      var parsed = parseCSV(raw);
+      if (!parsed || parsed.rows.length < 2) return null;
+      var H = parsed.headers;
+
+      var cols = {
+        date:     findCol(H, ['date','period','month','year','quarter','week']),
+        product:  findCol(H, ['product','sku','item','description','name','part','article']),
+        revenue:  findCol(H, ['revenue','sales','netsales','grosssales','netrevenue','turnover']),
+        cost:     findCol(H, ['cost','cogs','costofgoods','totalcost','directcost','cof']),
+        category: findCol(H, ['category','segment','family','group','class','dept','department','brand']),
+        volume:   findCol(H, ['units','volume','qty','quantity','pieces','count']),
+        price:    findCol(H, ['price','unitprice','sellingprice','listprice','asp','avgprice'])
+      };
+
+      if (cols.revenue < 0 || cols.cost < 0) return { error: 'missing_cols', cols: cols, headers: H };
+
+      var records = parsed.rows.map(function (row) {
+        var rev  = parseNum(cols.revenue >= 0 ? row[cols.revenue] : '0');
+        var cost = parseNum(cols.cost    >= 0 ? row[cols.cost]    : '0');
+        if (isNaN(rev) || isNaN(cost) || rev <= 0) return null;
+        return {
+          date:     cols.date     >= 0 ? normDate(row[cols.date])     : '',
+          product:  cols.product  >= 0 ? row[cols.product].trim()     : 'All',
+          category: cols.category >= 0 ? row[cols.category].trim()    : '',
+          volume:   cols.volume   >= 0 ? parseNum(row[cols.volume])   : NaN,
+          price:    cols.price    >= 0 ? parseNum(row[cols.price])    : NaN,
+          revenue: rev, cost: cost,
+          profit: rev - cost,
+          margin: (rev - cost) / rev * 100
+        };
+      }).filter(Boolean);
+
+      if (!records.length) return null;
+
+      /* ---- Trend by period ---- */
+      var periodMap = {};
+      records.forEach(function (r) {
+        var k = r.date || 'All';
+        if (!periodMap[k]) periodMap[k] = { rev: 0, cost: 0 };
+        periodMap[k].rev  += r.revenue;
+        periodMap[k].cost += r.cost;
+      });
+      var periods = Object.keys(periodMap).sort();
+      var trend = periods.map(function (p) {
+        var d = periodMap[p];
+        return { period: p, margin: (d.rev - d.cost) / d.rev * 100, rev: d.rev, cost: d.cost };
+      });
+
+      /* ---- Erosion by product ---- */
+      var prodMap = {};
+      records.forEach(function (r) {
+        var k = r.product;
+        if (!prodMap[k]) prodMap[k] = { periods: {}, category: r.category };
+        var pk = r.date || 'all';
+        if (!prodMap[k].periods[pk]) prodMap[k].periods[pk] = { rev: 0, cost: 0 };
+        prodMap[k].periods[pk].rev  += r.revenue;
+        prodMap[k].periods[pk].cost += r.cost;
+      });
+
+      var productErosion = Object.keys(prodMap).map(function (prod) {
+        var pp = prodMap[prod].periods;
+        var ps = Object.keys(pp).sort();
+        if (ps.length < 2) {
+          var only = pp[ps[0]];
+          var m = (only.rev - only.cost) / only.rev * 100;
+          return { product: prod, category: prodMap[prod].category, baseline: m, current: m, erosion: 0, driver: '—', basePeriod: ps[0], curPeriod: ps[0] };
+        }
+        var b = pp[ps[0]], c = pp[ps[ps.length - 1]];
+        var bMarg = (b.rev - b.cost) / b.rev * 100;
+        var cMarg = (c.rev - c.cost) / c.rev * 100;
+        var erosion = cMarg - bMarg;
+        // Root cause: cost-driven vs price-driven
+        var revChange  = (c.rev  - b.rev)  / b.rev  * 100;
+        var costChange = (c.cost - b.cost) / b.cost * 100;
+        var driver = '—';
+        if (!isNaN(revChange) && !isNaN(costChange)) {
+          if (erosion < 0) {
+            driver = costChange > Math.abs(revChange) ? 'Cost ↑' : 'Price ↓';
+          } else {
+            driver = revChange > costChange ? 'Price ↑' : 'Cost ↓';
+          }
+        }
+        return { product: prod, category: prodMap[prod].category, baseline: bMarg, current: cMarg, erosion: erosion, driver: driver, basePeriod: ps[0], curPeriod: ps[ps.length - 1] };
+      });
+      productErosion.sort(function (a, b) { return a.erosion - b.erosion; }); // worst first
+
+      /* ---- Overall stats ---- */
+      var totalRev  = records.reduce(function (s, r) { return s + r.revenue; }, 0);
+      var totalCost = records.reduce(function (s, r) { return s + r.cost; }, 0);
+      var overallMargin = (totalRev - totalCost) / totalRev * 100;
+      var baselineMargin = trend.length > 0 ? trend[0].margin : overallMargin;
+      var currentMargin  = trend.length > 0 ? trend[trend.length - 1].margin : overallMargin;
+      var overallErosion = currentMargin - baselineMargin;
+      var worstProd = productErosion[0];
+
+      return { trend, productErosion, overallMargin, baselineMargin, currentMargin, overallErosion, worstProd, totalRev, totalCost, records };
+    }
+
+    /* ---- Render ---- */
+    function render(result) {
+      // Overview
+      var ov = document.getElementById('metOverview');
+      if (ov) {
+        var eroClass = result.overallErosion < -1 ? 'bad' : result.overallErosion > 0.5 ? 'good' : 'warn';
+        var wpName = result.worstProd ? result.worstProd.product.slice(0, 14) : '—';
+        ov.innerHTML = [
+          { val: fmtPct(result.currentMargin), key: 'Current Margin', cls: result.currentMargin < 20 ? 'bad' : 'good' },
+          { val: (result.overallErosion >= 0 ? '+' : '') + fmtPct(result.overallErosion) + ' pp', key: 'vs. Baseline', cls: eroClass },
+          { val: '$' + fmtM(result.totalRev), key: 'Total Revenue', cls: 'info' },
+          { val: wpName, key: 'Most Eroded', cls: 'bad' }
+        ].map(function (s) {
+          return '<div class="met-ov-card ' + s.cls + '"><div class="met-ov-val">' + s.val + '</div><div class="met-ov-key">' + s.key + '</div></div>';
+        }).join('');
+      }
+
+      // Trend Chart
+      if (metChart) { metChart.destroy(); metChart = null; }
+      var canvas = document.getElementById('metChart');
+      if (canvas && result.trend.length > 0) {
+        var ctx = canvas.getContext('2d');
+        var labels = result.trend.map(function (t) { return t.period; });
+        var margins = result.trend.map(function (t) { return +t.margin.toFixed(2); });
+        var colors = margins.map(function (m) { return m < 15 ? 'rgba(239,83,80,0.85)' : m < 25 ? 'rgba(255,167,38,0.85)' : 'rgba(102,187,106,0.85)'; });
+        metChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: margins,
+              borderColor: '#149ddd',
+              backgroundColor: 'rgba(20,157,221,0.08)',
+              borderWidth: 2.5,
+              pointBackgroundColor: colors,
+              pointBorderColor: colors,
+              pointRadius: 5,
+              tension: 0.3,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (ctx) { return ' ' + ctx.parsed.y.toFixed(1) + '% margin'; } } } },
+            scales: {
+              x: { ticks: { color: '#666', font: { size: 9 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+              y: { ticks: { color: '#666', font: { size: 9 }, callback: function (v) { return v + '%'; } }, grid: { color: 'rgba(255,255,255,0.05)' } }
+            }
+          }
+        });
+      }
+
+      // Product Table
+      var tbody = document.getElementById('metTableBody');
+      if (tbody) {
+        tbody.innerHTML = result.productErosion.slice(0, 12).map(function (p) {
+          var eroClass = p.erosion < -2 ? 'ero-bad' : p.erosion > 1 ? 'ero-good' : 'ero-warn';
+          var sign = p.erosion >= 0 ? '+' : '';
+          return '<tr>' +
+            '<td><span class="prod-name" title="' + p.product + '">' + p.product + '</span>' + (p.category ? '<br><span style="color:#555;font-size:0.68rem;">' + p.category + '</span>' : '') + '</td>' +
+            '<td>' + fmtPct(p.baseline) + '</td>' +
+            '<td>' + fmtPct(p.current) + '</td>' +
+            '<td><span class="ero-pill ' + eroClass + '">' + sign + fmtPct(p.erosion) + ' pp</span></td>' +
+            '<td style="color:#777;font-size:0.75rem;">' + p.driver + '</td>' +
+          '</tr>';
+        }).join('');
+      }
+
+      // Insights
+      var ins = document.getElementById('metInsights');
+      if (ins) {
+        var bullets = [];
+        var em = result.overallErosion;
+        if (em < -2) {
+          bullets.push({ icon: 'bx bx-error-circle', color: '#ef5350', text: 'Overall margin has eroded by <strong>' + Math.abs(em).toFixed(1) + ' pp</strong> from baseline (' + fmtPct(result.baselineMargin) + ' → ' + fmtPct(result.currentMargin) + ') — immediate review recommended.' });
+        } else if (em < 0) {
+          bullets.push({ icon: 'bx bx-error', color: '#ffa726', text: 'Margin has slipped <strong>' + Math.abs(em).toFixed(1) + ' pp</strong> from baseline. Trend warrants monitoring.' });
+        } else {
+          bullets.push({ icon: 'bx bx-check-circle', color: '#66bb6a', text: 'Margin has <strong>improved ' + em.toFixed(1) + ' pp</strong> over the tracked period — positive trajectory.' });
+        }
+        if (result.worstProd && result.worstProd.erosion < -1) {
+          bullets.push({ icon: 'bx bx-trending-down', color: '#ef5350', text: '<strong>"' + result.worstProd.product + '"</strong> is the most eroded product at <strong>' + fmtPct(result.worstProd.erosion) + ' pp</strong>. Driver: ' + result.worstProd.driver + '.' });
+        }
+        var costDriven = result.productErosion.filter(function (p) { return p.driver === 'Cost ↑' && p.erosion < 0; }).length;
+        var priceDriven = result.productErosion.filter(function (p) { return p.driver === 'Price ↓' && p.erosion < 0; }).length;
+        if (costDriven > priceDriven && costDriven > 0) {
+          bullets.push({ icon: 'bx bx-dollar', color: '#ffa726', text: 'Erosion is primarily <strong>cost-driven</strong> (' + costDriven + ' of ' + result.productErosion.filter(function(p){return p.erosion<0;}).length + ' declining products). Review supplier contracts and overhead allocation.' });
+        } else if (priceDriven > 0) {
+          bullets.push({ icon: 'bx bx-tag', color: '#ffa726', text: 'Erosion is primarily <strong>price-driven</strong> (' + priceDriven + ' products). Discounting or competitive pressure may be reducing realized price.' });
+        }
+        if (result.trend.length >= 3) {
+          var last3 = result.trend.slice(-3).map(function (t) { return t.margin; });
+          var declining = last3[0] > last3[1] && last3[1] > last3[2];
+          if (declining) {
+            bullets.push({ icon: 'bx bx-line-chart-down', color: '#ef5350', text: 'Margin has declined in each of the <strong>last 3 periods</strong> — sustained downward trend.' });
+          }
+        }
+        bullets.push({ icon: 'bx bx-spreadsheet', color: '#149ddd', text: 'Analysed <strong>' + result.records.length.toLocaleString() + ' transaction rows</strong> across <strong>' + result.productErosion.length + ' products</strong> and <strong>' + result.trend.length + ' time periods</strong>.' });
+
+        ins.innerHTML = '<div class="met-insights-title"><i class="bx bx-bulb"></i> Key Findings</div>' +
+          bullets.map(function (b) {
+            return '<div class="met-insight-item"><i class="' + b.icon + '" style="color:' + b.color + '"></i><span>' + b.text + '</span></div>';
+          }).join('');
+      }
+    }
+
+    /* ---- File handling ---- */
+    function handleFile(file) {
+      if (!file || !file.name.toLowerCase().endsWith('.csv')) { alert('Please upload a .csv file.'); return; }
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var result = analyze(e.target.result);
+        if (!result) { alert('Could not parse the file. Check that it has the required columns (Date, Product, Revenue, Cost).'); return; }
+        if (result.error === 'missing_cols') {
+          var msg = 'Could not find required columns.\n\nDetected headers: ' + result.headers.join(', ') + '\n\nNeeded: Revenue/Sales and Cost/COGS columns.\n\nClick "How It Works" to see accepted column names.';
+          alert(msg); return;
+        }
+        document.getElementById('metResults').classList.remove('hidden');
+        document.getElementById('metUploadZone').innerHTML =
+          '<i class="bx bx-check-circle" style="color:#66bb6a"></i>' +
+          '<p style="color:#66bb6a;font-weight:600;">' + file.name + ' loaded</p>' +
+          '<small style="color:#555;">' + result.records.length.toLocaleString() + ' rows · ' + result.productErosion.length + ' products · <span style="color:#149ddd;cursor:pointer;text-decoration:underline;" onclick="resetMet()">Upload different file</span></small>';
+        render(result);
+      };
+      reader.readAsText(file);
+    }
+
+    window.resetMet = function () {
+      if (metChart) { metChart.destroy(); metChart = null; }
+      document.getElementById('metResults').classList.add('hidden');
+      document.getElementById('metUploadZone').innerHTML = origZone;
+      bindUpload();
+    };
+
+    /* ---- Modal ---- */
+    window.openMetModal  = function () { document.getElementById('metModal').classList.remove('hidden'); document.body.style.overflow = 'hidden'; };
+    window.closeMetModal = function () { document.getElementById('metModal').classList.add('hidden'); document.body.style.overflow = ''; };
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMetModal(); });
+
+    /* ---- Sample CSV download ---- */
+    window.downloadSampleCSV = function () {
+      var csv = 'Date,Product,Category,Revenue,Cost,Units\n' +
+        '2024-01,Widget A,Electronics,10000,7000,100\n2024-01,Widget B,Accessories,5000,4000,80\n' +
+        '2024-02,Widget A,Electronics,9500,7500,95\n2024-02,Widget B,Accessories,4800,4100,78\n' +
+        '2024-03,Widget A,Electronics,9200,7800,92\n2024-03,Widget B,Accessories,4600,4250,75\n' +
+        '2024-04,Widget A,Electronics,9000,8000,90\n2024-04,Widget B,Accessories,4500,4300,72\n';
+      var a = document.createElement('a');
+      a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+      a.download = 'sample_margin_data.csv';
+      a.click();
+    };
+
+    var origZone = '';
+    function bindUpload() {
+      var zone = document.getElementById('metUploadZone');
+      var inp  = document.getElementById('metFileInput');
+      if (!zone || !inp) return;
+      zone.onclick    = function () { inp.click(); };
+      inp.onchange    = function () { if (this.files[0]) handleFile(this.files[0]); };
+      zone.ondragover = function (e) { e.preventDefault(); zone.classList.add('drag-over'); };
+      zone.ondragleave = function () { zone.classList.remove('drag-over'); };
+      zone.ondrop     = function (e) { e.preventDefault(); zone.classList.remove('drag-over'); var f = e.dataTransfer.files[0]; if (f) handleFile(f); };
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var zone = document.getElementById('metUploadZone');
+      if (zone) origZone = zone.innerHTML;
+      bindUpload();
     });
   })();
   </script>
