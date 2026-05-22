@@ -1,4 +1,4 @@
-# Hardik Patel — Analytics & Pricing Portfolio
+# Hardik Patel - Analytics & Pricing Portfolio
 
 Welcome to my analytics portfolio. This repository showcases selected projects and case studies focused on pricing strategy, business intelligence, automation, and data-driven decision making.
 
