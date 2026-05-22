@@ -63,7 +63,7 @@
 
   <style>
     /* ============================================================
-       COMPONENT STYLES — GOLD DARK THEME
+       COMPONENT STYLES - GOLD DARK THEME
        ============================================================ */
 
     /* ---- Certification Cards ---- */
@@ -614,7 +614,7 @@
               <div class="cert-body">
                 <span class="cert-issuer">Microsoft</span>
                 <h4 class="cert-title">Microsoft Certified: Power Platform Fundamentals (PL-900)</h4>
-                <p class="cert-desc">Validates foundational knowledge of Microsoft Power Platform — Power Apps, Power Automate, Power BI, and Power Virtual Agents — and how these tools drive business transformation and automation.</p>
+                <p class="cert-desc">Validates foundational knowledge of Microsoft Power Platform - Power Apps, Power Automate, Power BI, and Power Virtual Agents - and how these tools drive business transformation and automation.</p>
                 <div class="cert-skills">
                   <span class="skill-tag">Power Apps</span>
                   <span class="skill-tag">Power Automate</span>
@@ -670,7 +670,7 @@
               <div class="cert-body">
                 <span class="cert-issuer">NASBA · Registry #140940</span>
                 <h4 class="cert-title">Data Analytics for Pricing Analysts in Excel</h4>
-                <p class="cert-desc">Advanced analytics techniques tailored for pricing professionals — covering statistical modeling, price optimization strategies, and Excel-based frameworks for data-driven pricing decisions.</p>
+                <p class="cert-desc">Advanced analytics techniques tailored for pricing professionals - covering statistical modeling, price optimization strategies, and Excel-based frameworks for data-driven pricing decisions.</p>
                 <div class="cert-skills">
                   <span class="skill-tag">Excel</span>
                   <span class="skill-tag">Statistical Analysis</span>
@@ -1032,7 +1032,7 @@
         <div class="calc-top-bar">
           <div>
             <h3><i class="bx bx-calculator" style="color:#60a5fa;margin-right:8px;"></i>Pricing Intelligence Calculator</h3>
-            <p>Select your pricing method, enter cost structure &amp; volume — margin, profit and contract value update in real time.</p>
+            <p>Select your pricing method, enter cost structure &amp; volume - margin, profit and contract value update in real time.</p>
           </div>
           <div class="live-badge"><span class="live-dot"></span> Live</div>
         </div>
@@ -1174,14 +1174,14 @@
                     <div class="cs-key">Units</div>
                   </div>
                   <div class="cs-stat">
-                    <div class="cs-val" id="out-breakeven">—</div>
+                    <div class="cs-val" id="out-breakeven">-</div>
                     <div class="cs-key">Break-even</div>
                   </div>
                 </div>
 
                 <div class="method-insight">
                   <i class="bx bx-info-circle"></i>
-                  <span id="method-insight-text">Cost-Plus: selling price is derived from total cost at your target margin — guarantees profitability but ignores market signals.</span>
+                  <span id="method-insight-text">Cost-Plus: selling price is derived from total cost at your target margin - guarantees profitability but ignores market signals.</span>
                 </div>
               </div>
             </div>
@@ -1217,7 +1217,7 @@
         <div class="met-header">
           <div>
             <h3><i class="bx bx-trending-down" style="color:#ff4f5a;margin-right:8px;"></i>Margin Erosion Tracker</h3>
-            <p>Upload your pricing &amp; cost data to pinpoint where margins are eroding — by product, category, and time period — with root-cause attribution.</p>
+            <p>Upload your pricing &amp; cost data to pinpoint where margins are eroding - by product, category, and time period - with root-cause attribution.</p>
           </div>
           <div style="display:flex;gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap;">
             <button class="met-learn-btn" onclick="openMetModal()"><i class="bx bx-info-circle"></i> How It Works</button>
@@ -1243,7 +1243,7 @@
 
           <div class="met-body">
             <div class="met-chart-panel">
-              <div class="met-panel-title">Gross Margin % — Trend</div>
+              <div class="met-panel-title">Gross Margin % - Trend</div>
               <div class="met-chart-wrap"><canvas id="metChart"></canvas></div>
             </div>
             <div class="met-table-panel">
@@ -1431,9 +1431,9 @@
   (function () {
     var currentMethod = 'costplus';
     var insights = {
-      costplus:   'Cost-Plus: selling price is derived from total cost at your target margin — guarantees profitability but ignores market signals.',
+      costplus:   'Cost-Plus: selling price is derived from total cost at your target margin - guarantees profitability but ignores market signals.',
       listdown:   'List Down: you start from a fixed list/MSRP price and see what margin remains after all your costs are deducted.',
-      premium:    'Premium: price is a direct multiple of total cost — ideal for differentiated or high-value products where premium positioning matters.',
+      premium:    'Premium: price is a direct multiple of total cost - ideal for differentiated or high-value products where premium positioning matters.',
       competitor: 'Competitor Match: you price at the market rate. Your margin depends entirely on how lean your cost structure is relative to competition.'
     };
     var durLabels = { 1:'1 mo.', 3:'3 mo.', 6:'6 mo.', 12:'12 mo.', 24:'24 mo.', 36:'36 mo.' };
@@ -1494,7 +1494,7 @@
       setText('out-contract-val', fmtBig(contractVal));
       setText('out-duration-label', durLabels[duration] || duration + ' mo.');
       setText('out-qty-label',    qty.toLocaleString());
-      setText('out-breakeven',    breakEven !== null ? breakEven.toLocaleString() + ' u' : '—');
+      setText('out-breakeven',    breakEven !== null ? breakEven.toLocaleString() + ' u' : '-');
 
       var mBar = document.getElementById('margin-bar');
       var mPct = document.getElementById('out-margin');
@@ -1582,7 +1582,7 @@
             <tr>
               <td>Cost / COGS <span class="req-badge">REQ</span></td>
               <td><code>cost, cogs, cost of goods, total cost, direct cost</code></td>
-              <td>Dollar amount per row — must be &lt; revenue for positive margin</td>
+              <td>Dollar amount per row - must be &lt; revenue for positive margin</td>
             </tr>
           </tbody>
         </table>
@@ -1640,9 +1640,9 @@
       if (!v && v !== 0) return NaN;
       return parseFloat(String(v).replace(/[$,%\s]/g, ''));
     }
-    function fmtPct(n, d) { return isNaN(n) ? '—' : n.toFixed(d !== undefined ? d : 1) + '%'; }
+    function fmtPct(n, d) { return isNaN(n) ? '-' : n.toFixed(d !== undefined ? d : 1) + '%'; }
     function fmtM(n) {
-      if (isNaN(n)) return '—';
+      if (isNaN(n)) return '-';
       var a = Math.abs(n);
       if (a >= 1e6) return (n / 1e6).toFixed(1) + 'M';
       if (a >= 1e3) return (n / 1e3).toFixed(1) + 'K';
@@ -1780,7 +1780,7 @@
         if (ps.length < 2) {
           var only = pp[ps[0]];
           var m = (only.rev - only.cost) / only.rev * 100;
-          return { product: prod, category: prodMap[prod].category, baseline: m, current: m, erosion: 0, driver: '—', basePeriod: ps[0], curPeriod: ps[0] };
+          return { product: prod, category: prodMap[prod].category, baseline: m, current: m, erosion: 0, driver: '-', basePeriod: ps[0], curPeriod: ps[0] };
         }
         var b = pp[ps[0]], c = pp[ps[ps.length - 1]];
         var bMarg = (b.rev - b.cost) / b.rev * 100;
@@ -1789,7 +1789,7 @@
         // Root cause: cost-driven vs price-driven
         var revChange  = (c.rev  - b.rev)  / b.rev  * 100;
         var costChange = (c.cost - b.cost) / b.cost * 100;
-        var driver = '—';
+        var driver = '-';
         if (!isNaN(revChange) && !isNaN(costChange)) {
           if (erosion < 0) {
             driver = costChange > Math.abs(revChange) ? 'Cost ↑' : 'Price ↓';
@@ -1819,7 +1819,7 @@
       var ov = document.getElementById('metOverview');
       if (ov) {
         var eroClass = result.overallErosion < -1 ? 'bad' : result.overallErosion > 0.5 ? 'good' : 'warn';
-        var wpName = result.worstProd ? result.worstProd.product.slice(0, 14) : '—';
+        var wpName = result.worstProd ? result.worstProd.product.slice(0, 14) : '-';
         ov.innerHTML = [
           { val: fmtPct(result.currentMargin), key: 'Current Margin', cls: result.currentMargin < 20 ? 'bad' : 'good' },
           { val: (result.overallErosion >= 0 ? '+' : '') + fmtPct(result.overallErosion) + ' pp', key: 'vs. Baseline', cls: eroClass },
@@ -1887,11 +1887,11 @@
         var bullets = [];
         var em = result.overallErosion;
         if (em < -2) {
-          bullets.push({ icon: 'bx bx-error-circle', color: '#ef5350', text: 'Overall margin has eroded by <strong>' + Math.abs(em).toFixed(1) + ' pp</strong> from baseline (' + fmtPct(result.baselineMargin) + ' → ' + fmtPct(result.currentMargin) + ') — immediate review recommended.' });
+          bullets.push({ icon: 'bx bx-error-circle', color: '#ef5350', text: 'Overall margin has eroded by <strong>' + Math.abs(em).toFixed(1) + ' pp</strong> from baseline (' + fmtPct(result.baselineMargin) + ' → ' + fmtPct(result.currentMargin) + ') - immediate review recommended.' });
         } else if (em < 0) {
           bullets.push({ icon: 'bx bx-error', color: '#ffa726', text: 'Margin has slipped <strong>' + Math.abs(em).toFixed(1) + ' pp</strong> from baseline. Trend warrants monitoring.' });
         } else {
-          bullets.push({ icon: 'bx bx-check-circle', color: '#66bb6a', text: 'Margin has <strong>improved ' + em.toFixed(1) + ' pp</strong> over the tracked period — positive trajectory.' });
+          bullets.push({ icon: 'bx bx-check-circle', color: '#66bb6a', text: 'Margin has <strong>improved ' + em.toFixed(1) + ' pp</strong> over the tracked period - positive trajectory.' });
         }
         if (result.worstProd && result.worstProd.erosion < -1) {
           bullets.push({ icon: 'bx bx-trending-down', color: '#ef5350', text: '<strong>"' + result.worstProd.product + '"</strong> is the most eroded product at <strong>' + fmtPct(result.worstProd.erosion) + ' pp</strong>. Driver: ' + result.worstProd.driver + '.' });
@@ -1907,7 +1907,7 @@
           var last3 = result.trend.slice(-3).map(function (t) { return t.margin; });
           var declining = last3[0] > last3[1] && last3[1] > last3[2];
           if (declining) {
-            bullets.push({ icon: 'bx bx-line-chart-down', color: '#ef5350', text: 'Margin has declined in each of the <strong>last 3 periods</strong> — sustained downward trend.' });
+            bullets.push({ icon: 'bx bx-line-chart-down', color: '#ef5350', text: 'Margin has declined in each of the <strong>last 3 periods</strong> - sustained downward trend.' });
           }
         }
         bullets.push({ icon: 'bx bx-spreadsheet', color: '#149ddd', text: 'Analysed <strong>' + result.records.length.toLocaleString() + ' transaction rows</strong> across <strong>' + result.productErosion.length + ' products</strong> and <strong>' + result.trend.length + ' time periods</strong>.' });
@@ -1993,20 +1993,20 @@
   function printQuote() {
     var eu = atob('aGFyZGlrcGF0ZWw4OTI1') + '\u0040' + atob('eWFob28uY29t');
     var fields = [
-      ['Base Cost',          document.getElementById('out-base-cost')   ? document.getElementById('out-base-cost').textContent   : '—'],
-      ['Overhead',           document.getElementById('pc-overhead')      ? document.getElementById('pc-overhead').value + '%'     : '—'],
-      ['Platform Fees',      document.getElementById('pc-platform')      ? document.getElementById('pc-platform').value + '%'     : '—'],
-      ['Total Cost / Unit',  document.getElementById('out-total-cost')   ? document.getElementById('out-total-cost').textContent  : '—'],
-      ['Selling Price / Unit',document.getElementById('out-price')       ? document.getElementById('out-price').textContent       : '—'],
-      ['Gross Profit / Unit',document.getElementById('out-profit')       ? document.getElementById('out-profit').textContent      : '—'],
-      ['Gross Margin',       document.getElementById('out-margin')       ? document.getElementById('out-margin').textContent      : '—'],
-      ['Quantity',           document.getElementById('out-qty-label')    ? document.getElementById('out-qty-label').textContent   : '—'],
-      ['Duration',           document.getElementById('out-duration-label')? document.getElementById('out-duration-label').textContent : '—'],
-      ['Contract Value',     document.getElementById('out-contract-val') ? document.getElementById('out-contract-val').textContent: '—'],
-      ['Break-even',         document.getElementById('out-breakeven')    ? document.getElementById('out-breakeven').textContent   : '—']
+      ['Base Cost',          document.getElementById('out-base-cost')   ? document.getElementById('out-base-cost').textContent   : '-'],
+      ['Overhead',           document.getElementById('pc-overhead')      ? document.getElementById('pc-overhead').value + '%'     : '-'],
+      ['Platform Fees',      document.getElementById('pc-platform')      ? document.getElementById('pc-platform').value + '%'     : '-'],
+      ['Total Cost / Unit',  document.getElementById('out-total-cost')   ? document.getElementById('out-total-cost').textContent  : '-'],
+      ['Selling Price / Unit',document.getElementById('out-price')       ? document.getElementById('out-price').textContent       : '-'],
+      ['Gross Profit / Unit',document.getElementById('out-profit')       ? document.getElementById('out-profit').textContent      : '-'],
+      ['Gross Margin',       document.getElementById('out-margin')       ? document.getElementById('out-margin').textContent      : '-'],
+      ['Quantity',           document.getElementById('out-qty-label')    ? document.getElementById('out-qty-label').textContent   : '-'],
+      ['Duration',           document.getElementById('out-duration-label')? document.getElementById('out-duration-label').textContent : '-'],
+      ['Contract Value',     document.getElementById('out-contract-val') ? document.getElementById('out-contract-val').textContent: '-'],
+      ['Break-even',         document.getElementById('out-breakeven')    ? document.getElementById('out-breakeven').textContent   : '-']
     ];
     var methodEl = document.querySelector('.method-tab.active');
-    var method = methodEl ? methodEl.textContent.trim() : '—';
+    var method = methodEl ? methodEl.textContent.trim() : '-';
     var now = new Date().toLocaleDateString('en-CA', { year:'numeric', month:'long', day:'numeric' });
 
     var rows = fields.map(function(f) {
@@ -2042,22 +2042,22 @@
   }
   </script>
 
-  <!-- ===== Commodity Ticker — Live Data ===== -->
+  <!-- ===== Commodity Ticker - Live Data ===== -->
   <script>
   (function () {
 
-    /* ── Static items (policy/index — no public live feed) ─────────── */
+    /* ── Static items (policy/index - no public live feed) ─────────── */
     var STATIC = [
       { name:'US STEEL TARIFF (IMPORT)', price:'+25%', change:'ACTIVE', dir:'warn', src:'policy' },
       { name:'US ALUMINUM TARIFF (IMPORT)', price:'+25%', change:'ACTIVE', dir:'warn', src:'policy' }
     ];
 
-    /* ── Yahoo Finance v8 — commodity futures ───────────────────────── */
+    /* ── Yahoo Finance v8 - commodity futures ───────────────────────── */
     // Sources: COMEX/CME via Yahoo Finance (query1.finance.yahoo.com)
-    // HG=F  : Copper   — COMEX, quoted in USD cents/lb  → divide by 100
-    // HRC=F : Steel HRC — CME,  quoted in USD $/short ton
-    // ALI=F : Aluminum  — COMEX, quoted in USD cents/lb → divide by 100
-    // NI=F  : Nickel    — LME,  quoted in USD $/mt      → convert to $/lb (/2204.62)
+    // HG=F  : Copper   - COMEX, quoted in USD cents/lb  → divide by 100
+    // HRC=F : Steel HRC - CME,  quoted in USD $/short ton
+    // ALI=F : Aluminum  - COMEX, quoted in USD cents/lb → divide by 100
+    // NI=F  : Nickel    - LME,  quoted in USD $/mt      → convert to $/lb (/2204.62)
     var YF_SYMBOLS = [
       { sym:'HG=F',  name:'COPPER (COMEX)',  unit:'USD/lb', scale:0.01,       fmt:function(v,r){ return 'CAD $'+(v*r).toFixed(3)+'/lb'; }, cadConvert:true  },
       { sym:'HRC=F', name:'STEEL HRC (CME)', unit:'USD/t',  scale:1,          fmt:function(v,r){ return 'USD $'+Math.round(v)+'/t'; },    cadConvert:false },
@@ -2141,7 +2141,7 @@
 
         var items = [];
 
-        // USD/CAD — from ExchangeRate-API (authoritative)
+        // USD/CAD - from ExchangeRate-API (authoritative)
         items.push({
           name:'USD/CAD',
           price: cad.toFixed(4),
@@ -2362,7 +2362,7 @@
   <!-- Contact info: assembled at runtime to prevent scraping -->
   <script>
     (function () {
-      // Email parts — never stored as a single string in source
+      // Email parts - never stored as a single string in source
       var eu = atob('aGFyZGlrcGF0ZWw4OTI1');
       var ed = atob('eWFob28uY29t');
       var email = eu + '\u0040' + ed;
